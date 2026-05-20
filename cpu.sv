@@ -10,7 +10,6 @@ module RegisterFile (
 	output logic [31:0] rd1,
 	output logic [31:0] rd2
 	);
-
 	logic [31:0] rf [31:0];
 	assign rd1 = (rs1 == 0) ? 32'h0 : rf[rs1];
 	assign rd2 = (rs2 == 0) ? 32'h0 : rf[rs2];
@@ -26,7 +25,6 @@ module alu (
     input  logic [31:0] op_A,
     input  logic [31:0] op_B,
     input  logic [3:0]  alu_operation,
-
     output logic [31:0] result,
     output logic        zero
 );
@@ -132,17 +130,33 @@ endmodule
 module dmem (
     input  logic        clk,
     input  logic        mem_wen,
-    input  logic [31:0] addr,
+    input  logic [31:0] raddr,
+    input  logic [31:0] waddr,
+    input  logic [2:0]  rmask,
+    input  logic [2:0]  wmask,
     input  logic [31:0] mem_wdata,
     output logic [31:0] mem_rdata
 );
-    logic [31:0] memory [1024] = '{default: '0};
+    logic [31:0] memory [1024*1024*1024] = '{default: '0};
     always_ff @(posedge clk) begin
         if (mem_wen) begin
-            memory[addr[11:2]] <= mem_wdata;
+            memory[addr] <= mem_wdata;
+			case (wmask)
+				2'd0: memory[waddr] <= mem_wdata;
+				2'd1: memory[waddr] <= {16'd0,mem_wdata[15:0]};
+				2'd2: memory[waddr] <= {24'd0,mem_wdata[7:0]};
+				default: begin end
+			endcase
         end
     end
-    assign mem_rdata = memory[addr[11:2]];
+	always @(*) begin
+		case (rmask)
+			2'd0: mem_rdata = memory[raddr];
+			2'd1: mem_rdata = {16'd0,memory[raddr][15:0]};
+			2'd2: mem_rdata = {24'd0,memory[raddr][7:0]};
+			default: begin end
+		endcase
+	end
 endmodule
 
 module imem (
@@ -153,17 +167,66 @@ module imem (
     assign instr = memory[addr[31:2]];
 endmodule
 
+module branch_compare (
+    input  wire [31:0] rs1,        
+    input  wire [31:0] rs2,        
+    input  wire [2:0]       br_cond,    
+    output wire             branch_taken 
+);
+    localparam BEQ  = 3'b000;  
+    localparam BNE  = 3'b001;  
+    localparam BLT  = 3'b100;  
+    localparam BGE  = 3'b101;  
+    localparam BLTU = 3'b110;  
+    localparam BGEU = 3'b111;  
+
+    wire eq  = (rs1 == rs2);
+    wire lt  = ($signed(rs1) < $signed(rs2));   
+    wire ltu = (rs1 < rs2);                     
+    assign branch_taken = (br_cond == BEQ)  ? eq  :
+                          (br_cond == BNE)  ? !eq :
+                          (br_cond == BLT)  ? lt  :
+                          (br_cond == BGE)  ? !lt :
+                          (br_cond == BLTU) ? ltu :
+                          (br_cond == BGEU) ? !ltu : 1'b0; 
+endmodule
+
 module cpu (
 	input clk,
 	input rst
 	);
 
-	logic [31:0] inst;
+	logic [31:0] inst_1;
+	logic [31:0] inst_2;
+	logic [31:0] pc;
 	logic [31:0] imm;
 	logic [31:0] alu_out;
 	logic mem_wen;
 	logic [31:0] mem_wdata;
 	logic [31:0] mem_rdata;
+	logic [31:0] pc_next;
+
+	logic [6:0] opcode_1;
+	logic [31:0] rd1_1;
+	logic [31:0] rd2_1;
+	logic [3:0] funct3_1;
+	logic [4:0] rs1_1;
+	logic [4:0] rs2_1;
+	logic [6:0] funct7_1;
+
+	logic [6:0] opcode_2;
+	logic [31:0] rd1_2;
+	logic [31:0] rd2_2;
+	logic [3:0] funct3_2;
+	logic [4:0] rs1_2;
+	logic [4:0] rs2_2;
+	logic [6:0] funct7_2;
+
+	logic [31:0] rd1_1;
+	logic [31:0] rd2_1;
+	logic [31:0] wd_rf;
+	logic [31:0] waddr_rf;
+	logic we_rf;
 
 	dmem dmem(
 		.clk(clk), .addr(alu_out),
@@ -173,7 +236,7 @@ module cpu (
 
 	imem imem(
 		.addr(pc), 
-		.instr(inst)
+		.instr(inst_1)
 		);
 
 	immgen immgen(
@@ -181,21 +244,49 @@ module cpu (
 		.immediate(imm)
 		);
 
+	branch_compare branch_compare(
+		.rs1(rd1_2), .rs2(rd2_2), .br_cond(funct3_2),
+		.branch_taken(branch_taken)
+		);
+
 	alu_controller alu_controller(
-		.alu_op(alu_op), func3(funct3),
-		.func7(funct7), .alu_operation(alu_operation)
+		.alu_op(alu_op), func3(funct3_2),
+		.func7(funct7_2), .alu_operation(alu_operation)
 		);
 
 	alu alu(
 		.alu_operation(alu_operation), .op_A(srcA),
-		.op_B(srcB),
+		.op_B(srcB), .result(alu_out), .zero(zero)
 		);
 
 	RegisterFile RegisterFile(
-		
+		.rs1(rs1_1), .rs2(rs2_1), .we_rf(we_rf),
+		.waddr_rf(waddr_rf), .wd_rf(wd_rf), .rd1(rd1_1),
+		.rd2(rd2_1)
 		);
 
+		always @(*) begin
+			opcode_1 = inst_1[6:0];
+			rd_1 = inst_1[11:7];
+			funct3_1 = inst_1[14:12];
+			rs1_1 = inst_1[19:15];
+			rs2_1 = inst_1[24:20];
+			funct7_1 = inst_1[31:25];
 
+			opcode_2 = inst_2[6:0];
+			rd_2 = inst_2[11:7];
+			funct3_2 = inst_2[14:12];
+			rs1_2 = inst_2[19:15];
+			rs2_2 = inst_2[24:20];
+			funct7_2 = inst_2[31:25];
+		end
 
+		always @(*) begin
+
+		end
+
+		always @(posedge clk) begin
+			inst_2 <= inst_1;
+		end
 
 endmodule
