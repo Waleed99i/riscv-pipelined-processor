@@ -30,10 +30,8 @@ module alu (
     output logic [31:0] result,
     output logic        zero
 );
-
     always_comb begin
         unique case (alu_operation)
-
             4'b0000: result = op_A & op_B;                      // AND
             4'b0001: result = op_A | op_B;                      // OR
             4'b0010: result = op_A + op_B;                      // ADD
@@ -46,15 +44,10 @@ module alu (
                                 ? 32'd1 : 32'd0;                          // SLT
             4'b1001: result = (op_A < op_B) 
                                 ? 32'd1 : 32'd0;                          // SLTU
-
             default: result = 32'd0;
-
         endcase
     end
-
-    // Zero flag
     assign zero = (result == 32'd0);
-
 endmodule
 
 module alu_controller (
@@ -165,24 +158,37 @@ module cpu (
 	input rst
 	);
 
+	logic [31:0] inst;
+	logic [31:0] imm;
+	logic [31:0] alu_out;
+	logic mem_wen;
+	logic [31:0] mem_wdata;
+	logic [31:0] mem_rdata;
+
 	dmem dmem(
-		.clk(clk), .addr()
+		.clk(clk), .addr(alu_out),
+		.mem_wen(mem_wen), .mem_wdata(mem_wdata),
+		.mem_rdata(mem_rdata)
 		);
 
 	imem imem(
-
+		.addr(pc), 
+		.instr(inst)
 		);
 
 	immgen immgen(
-		
+		.instruction(inst),
+		.immediate(imm)
 		);
 
 	alu_controller alu_controller(
-
+		.alu_op(alu_op), func3(funct3),
+		.func7(funct7), .alu_operation(alu_operation)
 		);
 
 	alu alu(
-
+		.alu_operation(alu_operation), .op_A(srcA),
+		.op_B(srcB),
 		);
 
 	RegisterFile RegisterFile(
