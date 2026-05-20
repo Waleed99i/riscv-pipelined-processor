@@ -136,21 +136,29 @@ module immgen (
     end
 endmodule
 
-module dmem(
-	input clk,
-	input [31:0] addr,
-	input [31:0] wdata,
-	input we,
-	output logic [31:0] rdata
-	);
-	assign rdata = valid? pmem_read(addr, {4'h0,rmask},0):0;
-	always @(posedge clk) begin
-		if (we && valid) begin 
-			pmem_write(addr, wdata, {4'h0,wmask});
-		end
-	end
+module dmem (
+    input  logic        clk,
+    input  logic        mem_wen,
+    input  logic [31:0] addr,
+    input  logic [31:0] mem_wdata,
+    output logic [31:0] mem_rdata
+);
+    logic [31:0] memory [1024] = '{default: '0};
+    always_ff @(posedge clk) begin
+        if (mem_wen) begin
+            memory[addr[11:2]] <= mem_wdata;
+        end
+    end
+    assign mem_rdata = memory[addr[11:2]];
 endmodule
 
+module imem (
+    input  logic [31:0] addr,
+    output logic [31:0] instr
+);
+    logic [31:0] memory [1024*1024*1024]; // 4GB imem
+    assign instr = memory[addr[31:2]];
+endmodule
 
 module cpu (
 	input clk,
@@ -159,6 +167,10 @@ module cpu (
 
 	dmem dmem(
 		.clk(clk), .addr()
+		);
+
+	imem imem(
+
 		);
 
 	immgen immgen(
