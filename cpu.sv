@@ -201,7 +201,6 @@ module cpu (
 	// ==========================================
 	logic [31:0] pc_next;
 	logic [31:0] pc;
-	logic [31:0] inst_0;
 	logic stall;
 	logic flush;
 
@@ -284,7 +283,7 @@ module cpu (
 
 
 	// ==========================================
-	// IF (Fetch) STAGE
+	// IF-ID (Stage 1) - Merged Fetch & Decode
 	// ==========================================
 	always_ff @(posedge clk) begin
 		if (rst) begin
@@ -296,21 +295,10 @@ module cpu (
 
 	imem imem_inst(
 		.addr(pc), 
-		.instr(inst_0)
+		.instr(inst_1)
 	);
 
-	// ==========================================
-	// STAGE 1 (IF-ID) Pipeline Register
-	// ==========================================
-	always_ff @(posedge clk) begin
-		if (rst || flush) begin
-			inst_1 <= `INST_NOP;
-			pc_1 <= 32'd0;
-		end else if (!stall) begin
-			inst_1 <= inst_0;
-			pc_1 <= pc;
-		end
-	end
+	assign pc_1 = pc;
 
 	// Decode logic
 	always_comb begin
@@ -474,6 +462,8 @@ module cpu (
 		// Mux for ALU srcB
 		if (opcode_2 == `OPC_ARI_RTYPE || opcode_2 == `OPC_BRANCH) begin
 			alu_srcB_2 = forwarded_rs2_2;
+		end else if (opcode_2 == `OPC_JAL || opcode_2 == `OPC_JALR) begin
+			alu_srcB_2 = 32'd0; // Add 0 to pc+4 for return address calculation
 		end else begin
 			alu_srcB_2 = imm_2; 
 		end
