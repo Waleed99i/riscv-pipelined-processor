@@ -140,7 +140,7 @@ module dmem (
     logic [31:0] memory [1024*1024*1024] = '{default: '0};
     always_ff @(posedge clk) begin
         if (mem_wen) begin
-            memory[addr] <= mem_wdata;
+            memory[waddr] <= mem_wdata;
 			case (wmask)
 				2'd0: memory[waddr] <= mem_wdata;
 				2'd1: memory[waddr] <= {16'd0,mem_wdata[15:0]};
@@ -231,7 +231,6 @@ module cpu (
 	logic [6:0] funct7_1;
 	logic [31:0] rd1_1;
 	logic [31:0] rd2_1;
-	logic [31:0] srcB_1;
 
 	// ==========================================
 	// 3. Execute/Memory Stage (EX-MEM, Stage 2) Wires
@@ -241,7 +240,6 @@ module cpu (
 	logic [31:0] imm_2;
 	logic [31:0] rd1_2;
 	logic [31:0] rd2_2;
-	logic [31:0] srcB_2_reg; 
 	
 	logic we_rf_2;
 	logic [1:0] alu_op_2;
@@ -337,12 +335,11 @@ module cpu (
 		branch_1     = 0;
 		jump_1       = 0;
 		jump_reg_1   = 0;
-		srcB_1       = rd2_1;
 
 		case (1'b1)
 			// Load Instructions
 			(opcode_1 == `OPC_LOAD): begin
-				we_rf_1 = 1; srcB_1 = imm_1; alu_op_1 = 2'b00; mem_to_reg_1 = 1; 
+				we_rf_1 = 1; alu_op_1 = 2'b00; mem_to_reg_1 = 1; 
 				if (funct3_1 == `FNC_LB || funct3_1 == `FNC_LBU) rmask_1 = 2'd2;
 				else if (funct3_1 == `FNC_LH || funct3_1 == `FNC_LHU) rmask_1 = 2'd1;
 				else rmask_1 = 2'd0;
@@ -350,7 +347,7 @@ module cpu (
 
 			// Store Instructions
 			(opcode_1 == `OPC_STORE): begin
-				we_rf_1 = 0; srcB_1 = imm_1; alu_op_1 = 2'b00; mem_wen_1 = 1;
+				we_rf_1 = 0; alu_op_1 = 2'b00; mem_wen_1 = 1;
 				if (funct3_1 == `FNC_SB) wmask_1 = 2'd2;
 				else if (funct3_1 == `FNC_SH) wmask_1 = 2'd1;
 				else wmask_1 = 2'd0;
@@ -358,31 +355,31 @@ module cpu (
 
 			// R-type Arithmetic Instructions
 			(opcode_1 == `OPC_ARI_RTYPE): begin
-				we_rf_1 = 1; srcB_1 = rd2_1; alu_op_1 = 2'b10;
+				we_rf_1 = 1; alu_op_1 = 2'b10;
 			end
 
 			// I-type Arithmetic Instructions
 			(opcode_1 == `OPC_ARI_ITYPE): begin 
-				we_rf_1 = 1; srcB_1 = imm_1; alu_op_1 = 2'b11;
+				we_rf_1 = 1; alu_op_1 = 2'b11;
 			end
 
 			// B-type Branch Instructions
 			(opcode_1 == `OPC_BRANCH): begin
-				we_rf_1 = 0; srcB_1 = rd2_1; alu_op_1 = 2'b01; branch_1 = 1;
+				we_rf_1 = 0; alu_op_1 = 2'b01; branch_1 = 1;
 			end
 
 			// J-type / U-type Instructions
 			(opcode_1 == `OPC_JAL): begin 
-				we_rf_1 = 1; srcB_1 = imm_1; alu_op_1 = 2'b00; jump_1 = 1;
+				we_rf_1 = 1; alu_op_1 = 2'b00; jump_1 = 1;
 			end
 			(opcode_1 == `OPC_JALR): begin
-				we_rf_1 = 1; srcB_1 = imm_1; alu_op_1 = 2'b00; jump_1 = 1; jump_reg_1 = 1;
+				we_rf_1 = 1; alu_op_1 = 2'b00; jump_1 = 1; jump_reg_1 = 1;
 			end
 			(opcode_1 == `OPC_LUI): begin
-				we_rf_1 = 1; srcB_1 = imm_1; alu_op_1 = 2'b00; 
+				we_rf_1 = 1; alu_op_1 = 2'b00; 
 			end
 			(opcode_1 == `OPC_AUIPC): begin 
-				we_rf_1 = 1; srcB_1 = imm_1; alu_op_1 = 2'b00; 
+				we_rf_1 = 1; alu_op_1 = 2'b00; 
 			end
 			default: begin
 			end
@@ -420,7 +417,6 @@ module cpu (
 			branch_2 <= 0;
 			jump_2 <= 0;
 			jump_reg_2 <= 0;
-			srcB_2_reg <= 32'd0;
 		end else begin
 			inst_2 <= inst_1;
 			pc_2 <= pc_1;
@@ -436,7 +432,6 @@ module cpu (
 			branch_2 <= branch_1;
 			jump_2 <= jump_1;
 			jump_reg_2 <= jump_reg_1;
-			srcB_2_reg <= srcB_1; 
 		end
 	end
 
