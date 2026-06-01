@@ -26,8 +26,7 @@ module cpu (
 	logic mem_to_reg_1;
 	logic [1:0] rmask_1;
 	logic [1:0] wmask_1;
-	logic mem_wen_1;
-	logic branch_1;
+	logic mem_wen_1;	logic load_unsigned_1;	logic branch_1;
 	logic jump_1;
 	logic jump_reg_1;
 
@@ -55,8 +54,7 @@ module cpu (
 	logic mem_to_reg_2;
 	logic [1:0] rmask_2;
 	logic [1:0] wmask_2;
-	logic mem_wen_2;
-	logic branch_2;
+	logic mem_wen_2;	logic load_unsigned_2;	logic branch_2;
 	logic jump_2;
 	logic jump_reg_2;
 
@@ -141,6 +139,7 @@ module cpu (
 		rmask_1      = 2'd0; 
 		wmask_1      = 2'd0;
 		mem_wen_1    = 0;
+		load_unsigned_1 = 1;
 		branch_1     = 0;
 		jump_1       = 0;
 		jump_reg_1   = 0;
@@ -148,9 +147,11 @@ module cpu (
 		case (1'b1)
 			// Load Instructions
 			(opcode_1 == `OPC_LOAD): begin
-				we_rf_1 = 1; alu_op_1 = 2'b00; mem_to_reg_1 = 1; 
-				if (funct3_1 == `FNC_LB || funct3_1 == `FNC_LBU) rmask_1 = 2'd2;
-				else if (funct3_1 == `FNC_LH || funct3_1 == `FNC_LHU) rmask_1 = 2'd1;
+				we_rf_1 = 1; alu_op_1 = 2'b00; mem_to_reg_1 = 1; load_unsigned_1 = 1;
+				if (funct3_1 == `FNC_LB) begin rmask_1 = 2'd2; load_unsigned_1 = 0; end
+				else if (funct3_1 == `FNC_LBU) rmask_1 = 2'd2;
+				else if (funct3_1 == `FNC_LH) begin rmask_1 = 2'd1; load_unsigned_1 = 0; end
+				else if (funct3_1 == `FNC_LHU) rmask_1 = 2'd1;
 				else rmask_1 = 2'd0;
 			end
 
@@ -195,15 +196,13 @@ module cpu (
 		endcase
 	end
 
-	// Stall logic (Load-Use Hazard)
-	// Even though dmem is combinational and technically data can be forwarded in time, 
-	// a standard pipeline often stalls to cleanly separate memory access from ALU execution.
+	// Stall logic for hazards where stage-1 depends on a pending register write.
 	always_comb begin
 		stall = 0;
-		if (mem_to_reg_2 && we_rf_2 && rd_2 != 0) begin
-			if (rd_2 == rs1_1 || rd_2 == rs2_1) begin
-				stall = 1;
-			end
+		if (we_rf_2 && rd_2 != 0 && (rd_2 == rs1_1 || rd_2 == rs2_1)) begin
+			stall = 1;
+		end else if (we_rf_3 && waddr_rf_3 != 0 && (waddr_rf_3 == rs1_1 || waddr_rf_3 == rs2_1)) begin
+			stall = 1;
 		end
 	end
 
@@ -223,6 +222,7 @@ module cpu (
 			rmask_2 <= 2'd0;
 			wmask_2 <= 2'd0;
 			mem_wen_2 <= 0;
+			load_unsigned_2 <= 1;
 			branch_2 <= 0;
 			jump_2 <= 0;
 			jump_reg_2 <= 0;
@@ -238,12 +238,12 @@ module cpu (
 			rmask_2 <= rmask_1;
 			wmask_2 <= wmask_1;
 			mem_wen_2 <= mem_wen_1;
+			load_unsigned_2 <= load_unsigned_1;
 			branch_2 <= branch_1;
 			jump_2 <= jump_1;
 			jump_reg_2 <= jump_reg_1;
 		end
 	end
-
 	always_comb begin
 		opcode_2 = inst_2[6:0];
 		rd_2     = inst_2[11:7];
@@ -271,22 +271,23 @@ module cpu (
 		end else begin
 			alu_srcB_2 = imm_2; 
 		end
-	end
 
-	alu_controller alu_ctrl_inst(
-		.alu_op(alu_op_2), 
-		.func3(funct3_2),
-		.func7(funct7_2), 
-		.alu_operation(alu_operation_2)
-	);
+    end
 
-	// ALU srcA selection
-	always_comb begin
-		if (opcode_2 == `OPC_AUIPC) alu_srcA_2 = pc_2;
-		else if (opcode_2 == `OPC_LUI) alu_srcA_2 = 32'd0;
-		else if (opcode_2 == `OPC_JAL || opcode_2 == `OPC_JALR) alu_srcA_2 = pc_2 + 4; // JAL/JALR saves pc+4 to rd
-		else alu_srcA_2 = forwarded_rs1_2;
-	end
+    // ALU srcA selection
+    always_comb begin
+        if (opcode_2 == `OPC_AUIPC) alu_srcA_2 = pc_2;
+        else if (opcode_2 == `OPC_LUI) alu_srcA_2 = 32'd0;
+        else if (opcode_2 == `OPC_JAL || opcode_2 == `OPC_JALR) alu_srcA_2 = pc_2 + 4; // JAL/JALR saves pc+4 to rd
+        else alu_srcA_2 = forwarded_rs1_2;
+    end
+
+    alu_controller alu_ctrl_inst(
+        .alu_op(alu_op_2),
+        .func3(funct3_2),
+        .func7(funct7_2),
+        .alu_operation(alu_operation_2)
+    );
 
 	alu alu_inst(
 		.alu_operation(alu_operation_2), 
@@ -309,6 +310,7 @@ module cpu (
 		.mem_wen(mem_wen_2), 
 		.rmask(rmask_2),
 		.wmask(wmask_2),
+		.load_unsigned(load_unsigned_2),
 		.mem_wdata(forwarded_rs2_2),
 		.mem_rdata(mem_rdata_2)
 	);
@@ -345,12 +347,15 @@ module cpu (
 			alu_out_3 <= alu_out_2;
 			mem_rdata_3 <= mem_rdata_2;
 		end
-	end
+        if (!rst && we_rf_3) begin
+            // register write-back completed
+        end
+    end
 
-	// Write-Back logic
-	always_comb begin
-		if (mem_to_reg_3) wd_rf_3 = mem_rdata_3;
-		else wd_rf_3 = alu_out_3;
-	end
+    // Write-Back logic
+    always_comb begin
+        if (mem_to_reg_3) wd_rf_3 = mem_rdata_3;
+        else wd_rf_3 = alu_out_3;
+    end
 
 endmodule
