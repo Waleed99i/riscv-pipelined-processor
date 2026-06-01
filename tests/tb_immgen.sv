@@ -13,19 +13,16 @@ module tb_immgen;
         // I-type addi x1, x0, -1
         instruction = 32'b111111111111_00000_000_00001_0010011;
             #1;
-        $display("immgen debug: instruction=%b immediate=%08x", instruction, immediate);
         if (immediate !== 32'hFFFFFFFF) $fatal("I-type sign extension failed");
 
         // S-type store word: sw x1, 4(x2)
         instruction = 32'b0000000_00001_00010_010_00100_0100011;
             #1;
-            $display("immgen debug: instruction=%b immediate=%08x", instruction, immediate);
         if (immediate !== 32'd4) $fatal("S-type immediate failed");
 
         // B-type branch: beq x1, x2, 8
         instruction = 32'b00000000001000001000010001100011;
             #1;
-            $display("immgen debug: instruction=%b immediate=%08x", instruction, immediate);
         if (immediate !== 32'd8) $fatal("B-type immediate failed");
 
         // U-type: auipc x5, 0x12345
