@@ -19,7 +19,7 @@ module tb_branch_compare;
         br_cond = `FNC_BGE; #1; if (branch_taken) $fatal("BGE failed");
         rs1 = 32'd1; rs2 = 32'd2; br_cond = `FNC_BLTU; #1; if (!branch_taken) $fatal("BLTU failed");
         br_cond = `FNC_BGEU; #1; if (branch_taken) $fatal("BGEU failed");
-        $display("tb_branch_compare PASS");
+        $display("\033[0;32mtb_branch_compare PASS\033[0m");
         $finish;
     end
 endmodule

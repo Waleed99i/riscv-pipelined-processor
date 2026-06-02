@@ -35,7 +35,7 @@ module tb_alu_controller;
         func3 = `FNC_OR;  func7 = `FNC7_0; #1; if (alu_operation !== 4'b0001) $fatal("OR mapping failed");
         func3 = `FNC_AND; #1; if (alu_operation !== 4'b0000) $fatal("AND mapping failed");
 
-        $display("tb_alu_controller PASS");
+        $display("\033[0;32mtb_alu_controller PASS\033[0m");
         $finish;
     end
 endmodule

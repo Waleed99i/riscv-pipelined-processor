@@ -33,7 +33,7 @@ module tb_immgen;
         instruction = 32'b00000001000000000000000011101111; #1;
         if (immediate !== 32'd16) $fatal("J-type immediate failed");
 
-        $display("tb_immgen PASS");
+        $display("\033[0;32mtb_immgen PASS\033[0m");
         $finish;
     end
 endmodule

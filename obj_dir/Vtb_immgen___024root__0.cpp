@@ -23,58 +23,49 @@ VlCoroutine Vtb_immgen___024root___eval_initial__TOP__Vtiming__0(Vtb_immgen___02
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
                                          15);
-    VL_WRITEF_NX("immgen debug: instruction=%b immediate=%08x\n",2
-                 , '#',32,vlSelfRef.tb_immgen__DOT__instruction
-                 , '#',32,vlSelfRef.tb_immgen__DOT__immediate);
     if (VL_UNLIKELY(((0xffffffffU != vlSelfRef.tb_immgen__DOT__immediate)))) {
-        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:17: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
+        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:16: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
-        VL_STOP_MT("tests/tb_immgen.sv", 17, "", false);
+        VL_STOP_MT("tests/tb_immgen.sv", 16, "", false);
     }
     vlSelfRef.tb_immgen__DOT__instruction = 0x00112223U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
-                                         21);
-    VL_WRITEF_NX("immgen debug: instruction=%b immediate=%08x\n",2
-                 , '#',32,vlSelfRef.tb_immgen__DOT__instruction
-                 , '#',32,vlSelfRef.tb_immgen__DOT__immediate);
+                                         20);
     if (VL_UNLIKELY(((4U != vlSelfRef.tb_immgen__DOT__immediate)))) {
-        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:23: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
+        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:21: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
-        VL_STOP_MT("tests/tb_immgen.sv", 23, "", false);
+        VL_STOP_MT("tests/tb_immgen.sv", 21, "", false);
     }
     vlSelfRef.tb_immgen__DOT__instruction = 0x00208463U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
-                                         27);
-    VL_WRITEF_NX("immgen debug: instruction=%b immediate=%08x\n",2
-                 , '#',32,vlSelfRef.tb_immgen__DOT__instruction
-                 , '#',32,vlSelfRef.tb_immgen__DOT__immediate);
+                                         25);
     if (VL_UNLIKELY(((8U != vlSelfRef.tb_immgen__DOT__immediate)))) {
-        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:29: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
+        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:26: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
-        VL_STOP_MT("tests/tb_immgen.sv", 29, "", false);
+        VL_STOP_MT("tests/tb_immgen.sv", 26, "", false);
     }
     vlSelfRef.tb_immgen__DOT__instruction = 0x12345297U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
-                                         32);
+                                         29);
     if (VL_UNLIKELY(((0x12345000U != vlSelfRef.tb_immgen__DOT__immediate)))) {
-        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:33: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
+        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:30: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
-        VL_STOP_MT("tests/tb_immgen.sv", 33, "", false);
+        VL_STOP_MT("tests/tb_immgen.sv", 30, "", false);
     }
     vlSelfRef.tb_immgen__DOT__instruction = 0x010000efU;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
-                                         36);
+                                         33);
     if (VL_UNLIKELY(((0x00000010U != vlSelfRef.tb_immgen__DOT__immediate)))) {
-        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:37: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
+        VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:34: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
-        VL_STOP_MT("tests/tb_immgen.sv", 37, "", false);
+        VL_STOP_MT("tests/tb_immgen.sv", 34, "", false);
     }
-    VL_WRITEF_NX("tb_immgen PASS\n",0);
-    VL_FINISH_MT("tests/tb_immgen.sv", 40, "");
+    VL_WRITEF_NX("\033[0;32mtb_immgen PASS\033[0m\n",0);
+    VL_FINISH_MT("tests/tb_immgen.sv", 37, "");
     co_return;
 }
 

@@ -16,7 +16,7 @@ module tb_imem;
         addr = 32'd0; #1; if (instr !== 32'hDEADBEEF) $fatal("IMEM read word 0 failed");
         addr = 32'd4; #1; if (instr !== 32'hCAFEBABE) $fatal("IMEM read word 1 failed");
 
-        $display("tb_imem PASS");
+        $display("\033[0;32mtb_imem PASS\033[0m");
         $finish;
     end
 endmodule

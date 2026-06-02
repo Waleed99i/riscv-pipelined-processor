@@ -49,7 +49,7 @@ module tb_dmem;
         @(posedge clk);
         if (mem_rdata !== 32'h000000EF) $fatal("Unsigned byte load failed");
 
-        $display("tb_dmem PASS");
+        $display("\033[0;32mtb_dmem PASS\033[0m");
         $finish;
     end
 endmodule

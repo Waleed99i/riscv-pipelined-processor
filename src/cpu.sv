@@ -93,7 +93,7 @@ module cpu (
 	always_ff @(posedge clk) begin
 		if (rst) begin
 			pc <= 32'd0;
-		end else if (!stall) begin
+		end else if (flush || !stall) begin
 			pc <= pc_next;
 		end
 	end

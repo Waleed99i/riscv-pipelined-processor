@@ -32,7 +32,7 @@ module tb_RegisterFile;
         we_rf = 0; @(posedge clk);
         if (dut.rf[0] !== 32'd0) $fatal("x0 must stay zero");
 
-        $display("tb_RegisterFile PASS");
+        $display("\033[0;32mtb_RegisterFile PASS\033[0m");
         $finish;
     end
 endmodule

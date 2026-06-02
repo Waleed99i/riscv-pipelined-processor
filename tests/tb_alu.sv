@@ -26,7 +26,7 @@ module tb_alu;
         alu_operation = 4'b0111; opA = -32'sd2; opB = 32'd1; #1; if (result !== -32'sd1) $fatal("SRA failed");
         alu_operation = 4'b1000; opA = -32'sd5; opB = 32'd3; #1; if (result !== 32'd1) $fatal("SLT failed");
         alu_operation = 4'b1001; opA = 32'd3; opB = 32'd5; #1; if (result !== 32'd1) $fatal("SLTU failed");
-        $display("tb_alu PASS");
+        $display("\033[0;32mtb_alu PASS\033[0m");
         $finish;
     end
 endmodule
