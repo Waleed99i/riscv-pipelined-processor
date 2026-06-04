@@ -50,6 +50,10 @@ module tb_with_hazards;
     endfunction
 
     initial begin
+        // Enable waveform dumping for QuestaSim/ModelSim
+        $dumpfile("tb_with_hazards.vcd");
+        $dumpvars(0, tb_with_hazards);
+        
         // Initialize registers and memory
         for (int i = 0; i < 32; i++) dut.rf_inst.rf[i] = 32'd0;
         for (int i = 0; i < 64; i++) dut.dmem_inst.memory[i] = 32'd0;
