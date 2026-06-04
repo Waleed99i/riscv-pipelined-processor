@@ -11,7 +11,7 @@ Vtb_RegisterFile__Syms::Vtb_RegisterFile__Syms(VerilatedContext* contextp, const
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(252);
+    Verilated::stackCheck(313);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);

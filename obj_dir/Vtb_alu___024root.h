@@ -23,7 +23,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_alu___024root final {
     CData/*0:0*/ __VnbaPhaseResult;
     IData/*31:0*/ tb_alu__DOT__opA;
     IData/*31:0*/ tb_alu__DOT__opB;
-    IData/*31:0*/ tb_alu__DOT__result;
+    IData/*31:0*/ tb_alu__DOT__dut__DOT__result;
     IData/*31:0*/ __VactIterCount;
     IData/*31:0*/ __VinactIterCount;
     IData/*31:0*/ __Vi;
@@ -31,6 +31,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_alu___024root final {
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggeredAcc;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
+    VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
     VlDelayScheduler __VdlySched;
 
     // INTERNAL VARIABLES

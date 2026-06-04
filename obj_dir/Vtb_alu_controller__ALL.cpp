@@ -2,6 +2,9 @@
 #define VL_INCLUDE_OPT include
 #include "Vtb_alu_controller.cpp"
 #include "Vtb_alu_controller___024root__0.cpp"
+#include "Vtb_alu_controller__Trace__0.cpp"
 #include "Vtb_alu_controller___024root__Slow.cpp"
 #include "Vtb_alu_controller___024root__0__Slow.cpp"
 #include "Vtb_alu_controller__Syms__Slow.cpp"
+#include "Vtb_alu_controller__Trace__0__Slow.cpp"
+#include "Vtb_alu_controller__TraceDecls__0__Slow.cpp"

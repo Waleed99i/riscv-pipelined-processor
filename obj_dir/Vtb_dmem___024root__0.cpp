@@ -13,6 +13,7 @@ void Vtb_dmem___024root___eval_initial(Vtb_dmem___024root* vlSelf) {
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(vlSelf);
+    vlSelfRef.__Vm_traceActivity[1U] = 1U;
     Vtb_dmem___024root___eval_initial__TOP__Vtiming__1(vlSelf);
 }
 
@@ -50,13 +51,16 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
                                                          "@(posedge tb_dmem.clk)", 
                                                          "tests/tb_dmem.sv", 
                                                          30);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_dmem.sv", 
                                          30);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_dmem__DOT__mem_wen = 0U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_dmem.sv", 
                                          31);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_dmem__DOT__rmask = 0U;
     vlSelfRef.tb_dmem__DOT__load_unsigned = 1U;
     Vtb_dmem___024root____VbeforeTrig_hc9da3785__0(vlSelf, 
@@ -66,6 +70,7 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
                                                          "@(posedge tb_dmem.clk)", 
                                                          "tests/tb_dmem.sv", 
                                                          33);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (VL_UNLIKELY(((0x12345678U != vlSelfRef.tb_dmem__DOT__mem_rdata)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_dmem.sv:34: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_dmem", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
@@ -74,6 +79,7 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_dmem.sv", 
                                          36);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_dmem__DOT__addr = 2U;
     vlSelfRef.tb_dmem__DOT__mem_wdata = 0x0000abcdU;
     vlSelfRef.tb_dmem__DOT__wmask = 1U;
@@ -85,13 +91,16 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
                                                          "@(posedge tb_dmem.clk)", 
                                                          "tests/tb_dmem.sv", 
                                                          38);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_dmem.sv", 
                                          38);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_dmem__DOT__mem_wen = 0U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_dmem.sv", 
                                          39);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_dmem__DOT__addr = 2U;
     vlSelfRef.tb_dmem__DOT__rmask = 1U;
     vlSelfRef.tb_dmem__DOT__load_unsigned = 0U;
@@ -102,6 +111,7 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
                                                          "@(posedge tb_dmem.clk)", 
                                                          "tests/tb_dmem.sv", 
                                                          41);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (VL_UNLIKELY(((0xffffabcdU != vlSelfRef.tb_dmem__DOT__mem_rdata)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_dmem.sv:42: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_dmem", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
@@ -110,6 +120,7 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_dmem.sv", 
                                          44);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_dmem__DOT__addr = 1U;
     vlSelfRef.tb_dmem__DOT__mem_wdata = 0x000000efU;
     vlSelfRef.tb_dmem__DOT__wmask = 2U;
@@ -121,13 +132,16 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
                                                          "@(posedge tb_dmem.clk)", 
                                                          "tests/tb_dmem.sv", 
                                                          46);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_dmem.sv", 
                                          46);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_dmem__DOT__mem_wen = 0U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_dmem.sv", 
                                          47);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_dmem__DOT__addr = 1U;
     vlSelfRef.tb_dmem__DOT__rmask = 2U;
     vlSelfRef.tb_dmem__DOT__load_unsigned = 1U;
@@ -138,6 +152,7 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
                                                          "@(posedge tb_dmem.clk)", 
                                                          "tests/tb_dmem.sv", 
                                                          49);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (VL_UNLIKELY(((0x000000efU != vlSelfRef.tb_dmem__DOT__mem_rdata)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_dmem.sv:50: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_dmem", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
@@ -145,6 +160,7 @@ VlCoroutine Vtb_dmem___024root___eval_initial__TOP__Vtiming__0(Vtb_dmem___024roo
     }
     VL_WRITEF_NX("\033[0;32mtb_dmem PASS\033[0m\n",0);
     VL_FINISH_MT("tests/tb_dmem.sv", 53, "");
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_return;
 }
 
@@ -196,21 +212,18 @@ void Vtb_dmem___024root___act_comb__TOP__0(Vtb_dmem___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_dmem___024root___act_comb__TOP__0\n"); );
     Vtb_dmem__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    IData/*31:0*/ tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word;
-    tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word = 0;
     // Body
-    tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
+    vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
         = vlSelfRef.tb_dmem__DOT__dut__DOT__memory[
         (0x000fffffU & (vlSelfRef.tb_dmem__DOT__addr 
                         >> 2U))];
     if ((0U == (IData)(vlSelfRef.tb_dmem__DOT__rmask))) {
-        vlSelfRef.tb_dmem__DOT__mem_rdata = tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word;
+        vlSelfRef.tb_dmem__DOT__mem_rdata = vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word;
     } else if ((1U == (IData)(vlSelfRef.tb_dmem__DOT__rmask))) {
         vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__half_word 
             = (0x0000ffffU & ((2U == (3U & vlSelfRef.tb_dmem__DOT__addr))
-                               ? (tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
-                                  >> 0x10U) : tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word));
+                               ? (vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
+                                  >> 0x10U) : vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word));
         vlSelfRef.tb_dmem__DOT__mem_rdata = ((IData)(vlSelfRef.tb_dmem__DOT__load_unsigned)
                                               ? (IData)(vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__half_word)
                                               : (((- (IData)(
@@ -222,18 +235,18 @@ void Vtb_dmem___024root___act_comb__TOP__0(Vtb_dmem___024root* vlSelf) {
     } else if ((2U == (IData)(vlSelfRef.tb_dmem__DOT__rmask))) {
         vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__byte_val 
             = (0x000000ffU & ((0U == (3U & vlSelfRef.tb_dmem__DOT__addr))
-                               ? tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word
+                               ? vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word
                                : ((1U == (3U & vlSelfRef.tb_dmem__DOT__addr))
-                                   ? (tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
+                                   ? (vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
                                       >> 8U) : ((2U 
                                                  == 
                                                  (3U 
                                                   & vlSelfRef.tb_dmem__DOT__addr))
                                                  ? 
-                                                (tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
+                                                (vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
                                                  >> 0x10U)
                                                  : 
-                                                (tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
+                                                (vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word 
                                                  >> 0x18U)))));
         vlSelfRef.tb_dmem__DOT__mem_rdata = ((IData)(vlSelfRef.tb_dmem__DOT__load_unsigned)
                                               ? (IData)(vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__byte_val)
@@ -343,82 +356,9 @@ void Vtb_dmem___024root___eval_nba(Vtb_dmem___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_dmem___024root___eval_nba\n"); );
     Vtb_dmem__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    IData/*31:0*/ __Vinline__nba_sequent__TOP__0___Vtemp_1;
     // Body
     if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
-        if (vlSelfRef.tb_dmem__DOT__mem_wen) {
-            __Vinline__nba_sequent__TOP__0___Vtemp_1 
-                = ((0U == (IData)(vlSelfRef.tb_dmem__DOT__wmask))
-                    ? vlSelfRef.tb_dmem__DOT__mem_wdata
-                    : ((1U == (IData)(vlSelfRef.tb_dmem__DOT__wmask))
-                        ? ((0U == (3U & vlSelfRef.tb_dmem__DOT__addr))
-                            ? ((0xffff0000U & vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                                [(0x000fffffU & (vlSelfRef.tb_dmem__DOT__addr 
-                                                 >> 2U))]) 
-                               | (0x0000ffffU & vlSelfRef.tb_dmem__DOT__mem_wdata))
-                            : ((2U == (3U & vlSelfRef.tb_dmem__DOT__addr))
-                                ? ((vlSelfRef.tb_dmem__DOT__mem_wdata 
-                                    << 0x00000010U) 
-                                   | (0x0000ffffU & vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                                      [(0x000fffffU 
-                                        & (vlSelfRef.tb_dmem__DOT__addr 
-                                           >> 2U))]))
-                                : vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                               [(0x000fffffU & (vlSelfRef.tb_dmem__DOT__addr 
-                                                >> 2U))]))
-                        : ((2U == (IData)(vlSelfRef.tb_dmem__DOT__wmask))
-                            ? ((2U & vlSelfRef.tb_dmem__DOT__addr)
-                                ? ((1U & vlSelfRef.tb_dmem__DOT__addr)
-                                    ? ((vlSelfRef.tb_dmem__DOT__mem_wdata 
-                                        << 0x00000018U) 
-                                       | (0x00ffffffU 
-                                          & vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                                          [(0x000fffffU 
-                                            & (vlSelfRef.tb_dmem__DOT__addr 
-                                               >> 2U))]))
-                                    : ((0xff000000U 
-                                        & vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                                        [(0x000fffffU 
-                                          & (vlSelfRef.tb_dmem__DOT__addr 
-                                             >> 2U))]) 
-                                       | ((0x00ff0000U 
-                                           & (vlSelfRef.tb_dmem__DOT__mem_wdata 
-                                              << 0x00000010U)) 
-                                          | (0x0000ffffU 
-                                             & vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                                             [(0x000fffffU 
-                                               & (vlSelfRef.tb_dmem__DOT__addr 
-                                                  >> 2U))]))))
-                                : ((1U & vlSelfRef.tb_dmem__DOT__addr)
-                                    ? ((0xffff0000U 
-                                        & vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                                        [(0x000fffffU 
-                                          & (vlSelfRef.tb_dmem__DOT__addr 
-                                             >> 2U))]) 
-                                       | ((0x0000ff00U 
-                                           & (vlSelfRef.tb_dmem__DOT__mem_wdata 
-                                              << 8U)) 
-                                          | (0x000000ffU 
-                                             & vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                                             [(0x000fffffU 
-                                               & (vlSelfRef.tb_dmem__DOT__addr 
-                                                  >> 2U))])))
-                                    : ((0xffffff00U 
-                                        & vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                                        [(0x000fffffU 
-                                          & (vlSelfRef.tb_dmem__DOT__addr 
-                                             >> 2U))]) 
-                                       | (0x000000ffU 
-                                          & vlSelfRef.tb_dmem__DOT__mem_wdata))))
-                            : vlSelfRef.tb_dmem__DOT__dut__DOT__memory
-                           [(0x000fffffU & (vlSelfRef.tb_dmem__DOT__addr 
-                                            >> 2U))])));
-            vlSelfRef.tb_dmem__DOT__dut__DOT__memory[(0x000fffffU 
-                                                      & (vlSelfRef.tb_dmem__DOT__addr 
-                                                         >> 2U))] 
-                = __Vinline__nba_sequent__TOP__0___Vtemp_1;
-        }
+        Vtb_dmem___024root___nba_sequent__TOP__0(vlSelf);
     }
     if ((3ULL & vlSelfRef.__VnbaTriggered[0U])) {
         Vtb_dmem___024root___act_comb__TOP__0(vlSelf);

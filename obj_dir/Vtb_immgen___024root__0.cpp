@@ -23,7 +23,7 @@ VlCoroutine Vtb_immgen___024root___eval_initial__TOP__Vtiming__0(Vtb_immgen___02
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
                                          15);
-    if (VL_UNLIKELY(((0xffffffffU != vlSelfRef.tb_immgen__DOT__immediate)))) {
+    if (VL_UNLIKELY(((0xffffffffU != vlSelfRef.tb_immgen__DOT__dut__DOT__immediate)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:16: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_immgen.sv", 16, "", false);
@@ -32,7 +32,7 @@ VlCoroutine Vtb_immgen___024root___eval_initial__TOP__Vtiming__0(Vtb_immgen___02
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
                                          20);
-    if (VL_UNLIKELY(((4U != vlSelfRef.tb_immgen__DOT__immediate)))) {
+    if (VL_UNLIKELY(((4U != vlSelfRef.tb_immgen__DOT__dut__DOT__immediate)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:21: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_immgen.sv", 21, "", false);
@@ -41,7 +41,7 @@ VlCoroutine Vtb_immgen___024root___eval_initial__TOP__Vtiming__0(Vtb_immgen___02
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
                                          25);
-    if (VL_UNLIKELY(((8U != vlSelfRef.tb_immgen__DOT__immediate)))) {
+    if (VL_UNLIKELY(((8U != vlSelfRef.tb_immgen__DOT__dut__DOT__immediate)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:26: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_immgen.sv", 26, "", false);
@@ -50,7 +50,7 @@ VlCoroutine Vtb_immgen___024root___eval_initial__TOP__Vtiming__0(Vtb_immgen___02
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
                                          29);
-    if (VL_UNLIKELY(((0x12345000U != vlSelfRef.tb_immgen__DOT__immediate)))) {
+    if (VL_UNLIKELY(((0x12345000U != vlSelfRef.tb_immgen__DOT__dut__DOT__immediate)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:30: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_immgen.sv", 30, "", false);
@@ -59,7 +59,7 @@ VlCoroutine Vtb_immgen___024root___eval_initial__TOP__Vtiming__0(Vtb_immgen___02
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_immgen.sv", 
                                          33);
-    if (VL_UNLIKELY(((0x00000010U != vlSelfRef.tb_immgen__DOT__immediate)))) {
+    if (VL_UNLIKELY(((0x00000010U != vlSelfRef.tb_immgen__DOT__dut__DOT__immediate)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_immgen.sv:34: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_immgen", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_immgen.sv", 34, "", false);
@@ -120,123 +120,92 @@ void Vtb_immgen___024root___act_sequent__TOP__0(Vtb_immgen___024root* vlSelf) {
                                                      == 
                                                      (3U 
                                                       & vlSelfRef.tb_immgen__DOT__instruction))))));
-    vlSelfRef.tb_immgen__DOT__immediate = ((0x00000040U 
-                                            & vlSelfRef.tb_immgen__DOT__instruction)
-                                            ? ((- (IData)(
-                                                          (1U 
-                                                           & (~ 
-                                                              (vlSelfRef.tb_immgen__DOT__instruction 
-                                                               >> 4U))))) 
-                                               & (((8U 
-                                                    & vlSelfRef.tb_immgen__DOT__instruction)
-                                                    ? 
-                                                   (((((0x00000ffeU 
-                                                        & ((- (IData)(
-                                                                      (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                       >> 0x0000001fU))) 
-                                                           << 1U)) 
-                                                       | (vlSelfRef.tb_immgen__DOT__instruction 
-                                                          >> 0x0000001fU)) 
-                                                      << 0x00000014U) 
-                                                     | ((((0x000001feU 
-                                                           & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                              >> 0x0000000bU)) 
-                                                          | (1U 
-                                                             & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                >> 0x00000014U))) 
-                                                         << 0x0000000bU) 
-                                                        | (0x000007feU 
-                                                           & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                              >> 0x00000014U)))) 
-                                                    & (- (IData)(
-                                                                 (7U 
-                                                                  == 
-                                                                  (7U 
-                                                                   & vlSelfRef.tb_immgen__DOT__instruction)))))
-                                                    : 
-                                                   ((4U 
-                                                     & vlSelfRef.tb_immgen__DOT__instruction)
-                                                     ? __VdfgRegularize_hebeb780c_0_2
-                                                     : 
-                                                    ((((- (IData)(
-                                                                  (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                   >> 0x0000001fU))) 
-                                                       << 0x0000000dU) 
-                                                      | ((((2U 
-                                                            & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                               >> 0x0000001eU)) 
-                                                           | (1U 
-                                                              & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                 >> 7U))) 
-                                                          << 0x0000000bU) 
-                                                         | ((0x000007e0U 
-                                                             & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                >> 0x00000014U)) 
-                                                            | (0x0000001eU 
-                                                               & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                  >> 7U))))) 
-                                                     & (- (IData)(
-                                                                  (3U 
-                                                                   == 
-                                                                   (3U 
-                                                                    & vlSelfRef.tb_immgen__DOT__instruction))))))) 
-                                                  & (- (IData)(
-                                                               (1U 
-                                                                & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                   >> 5U))))))
-                                            : ((0x00000020U 
-                                                & vlSelfRef.tb_immgen__DOT__instruction)
-                                                ? (
-                                                   (0x00000010U 
-                                                    & vlSelfRef.tb_immgen__DOT__instruction)
-                                                    ? 
-                                                   ((- (IData)((IData)(
-                                                                       (4U 
-                                                                        == 
-                                                                        (0x0000000cU 
-                                                                         & vlSelfRef.tb_immgen__DOT__instruction))))) 
-                                                    & __VdfgRegularize_hebeb780c_0_6)
-                                                    : 
-                                                   ((((- (IData)(
-                                                                 (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                  >> 0x0000001fU))) 
-                                                      << 0x0000000cU) 
-                                                     | ((0x00000fe0U 
+    vlSelfRef.tb_immgen__DOT__dut__DOT__immediate = 
+        ((0x00000040U & vlSelfRef.tb_immgen__DOT__instruction)
+          ? ((- (IData)((1U & (~ (vlSelfRef.tb_immgen__DOT__instruction 
+                                  >> 4U))))) & (((8U 
+                                                  & vlSelfRef.tb_immgen__DOT__instruction)
+                                                  ? 
+                                                 (((((0x00000ffeU 
+                                                      & ((- (IData)(
+                                                                    (vlSelfRef.tb_immgen__DOT__instruction 
+                                                                     >> 0x0000001fU))) 
+                                                         << 1U)) 
+                                                     | (vlSelfRef.tb_immgen__DOT__instruction 
+                                                        >> 0x0000001fU)) 
+                                                    << 0x00000014U) 
+                                                   | ((((0x000001feU 
                                                          & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                            >> 0x00000014U)) 
-                                                        | (0x0000001fU 
+                                                            >> 0x0000000bU)) 
+                                                        | (1U 
                                                            & (vlSelfRef.tb_immgen__DOT__instruction 
-                                                              >> 7U)))) 
-                                                    & (- (IData)((IData)(
-                                                                         (3U 
-                                                                          == 
-                                                                          (0x0000000fU 
-                                                                           & vlSelfRef.tb_immgen__DOT__instruction)))))))
-                                                : (
-                                                   (0x00000010U 
-                                                    & vlSelfRef.tb_immgen__DOT__instruction)
-                                                    ? 
-                                                   (((4U 
-                                                      & vlSelfRef.tb_immgen__DOT__instruction)
-                                                      ? __VdfgRegularize_hebeb780c_0_6
-                                                      : __VdfgRegularize_hebeb780c_0_2) 
-                                                    & (- (IData)(
-                                                                 (1U 
-                                                                  & (~ 
-                                                                     (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                      >> 3U))))))
-                                                    : 
-                                                   (__VdfgRegularize_hebeb780c_0_2 
-                                                    & ((- (IData)(
-                                                                  (1U 
-                                                                   & (~ 
-                                                                      (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                       >> 3U))))) 
-                                                       & (- (IData)(
-                                                                    (1U 
-                                                                     & (~ 
-                                                                        (vlSelfRef.tb_immgen__DOT__instruction 
-                                                                         >> 2U))))))))));
+                                                              >> 0x00000014U))) 
+                                                       << 0x0000000bU) 
+                                                      | (0x000007feU 
+                                                         & (vlSelfRef.tb_immgen__DOT__instruction 
+                                                            >> 0x00000014U)))) 
+                                                  & (- (IData)(
+                                                               (7U 
+                                                                == 
+                                                                (7U 
+                                                                 & vlSelfRef.tb_immgen__DOT__instruction)))))
+                                                  : 
+                                                 ((4U 
+                                                   & vlSelfRef.tb_immgen__DOT__instruction)
+                                                   ? __VdfgRegularize_hebeb780c_0_2
+                                                   : 
+                                                  ((((- (IData)(
+                                                                (vlSelfRef.tb_immgen__DOT__instruction 
+                                                                 >> 0x0000001fU))) 
+                                                     << 0x0000000dU) 
+                                                    | ((((2U 
+                                                          & (vlSelfRef.tb_immgen__DOT__instruction 
+                                                             >> 0x0000001eU)) 
+                                                         | (1U 
+                                                            & (vlSelfRef.tb_immgen__DOT__instruction 
+                                                               >> 7U))) 
+                                                        << 0x0000000bU) 
+                                                       | ((0x000007e0U 
+                                                           & (vlSelfRef.tb_immgen__DOT__instruction 
+                                                              >> 0x00000014U)) 
+                                                          | (0x0000001eU 
+                                                             & (vlSelfRef.tb_immgen__DOT__instruction 
+                                                                >> 7U))))) 
+                                                   & (- (IData)(
+                                                                (3U 
+                                                                 == 
+                                                                 (3U 
+                                                                  & vlSelfRef.tb_immgen__DOT__instruction))))))) 
+                                                & (- (IData)(
+                                                             (1U 
+                                                              & (vlSelfRef.tb_immgen__DOT__instruction 
+                                                                 >> 5U))))))
+          : ((0x00000020U & vlSelfRef.tb_immgen__DOT__instruction)
+              ? ((0x00000010U & vlSelfRef.tb_immgen__DOT__instruction)
+                  ? ((- (IData)((IData)((4U == (0x0000000cU 
+                                                & vlSelfRef.tb_immgen__DOT__instruction))))) 
+                     & __VdfgRegularize_hebeb780c_0_6)
+                  : ((((- (IData)((vlSelfRef.tb_immgen__DOT__instruction 
+                                   >> 0x0000001fU))) 
+                       << 0x0000000cU) | ((0x00000fe0U 
+                                           & (vlSelfRef.tb_immgen__DOT__instruction 
+                                              >> 0x00000014U)) 
+                                          | (0x0000001fU 
+                                             & (vlSelfRef.tb_immgen__DOT__instruction 
+                                                >> 7U)))) 
+                     & (- (IData)((IData)((3U == (0x0000000fU 
+                                                  & vlSelfRef.tb_immgen__DOT__instruction)))))))
+              : ((0x00000010U & vlSelfRef.tb_immgen__DOT__instruction)
+                  ? (((4U & vlSelfRef.tb_immgen__DOT__instruction)
+                       ? __VdfgRegularize_hebeb780c_0_6
+                       : __VdfgRegularize_hebeb780c_0_2) 
+                     & (- (IData)((1U & (~ (vlSelfRef.tb_immgen__DOT__instruction 
+                                            >> 3U))))))
+                  : (__VdfgRegularize_hebeb780c_0_2 
+                     & ((- (IData)((1U & (~ (vlSelfRef.tb_immgen__DOT__instruction 
+                                             >> 3U))))) 
+                        & (- (IData)((1U & (~ (vlSelfRef.tb_immgen__DOT__instruction 
+                                               >> 2U))))))))));
 }
 
 void Vtb_immgen___024root___eval_act(Vtb_immgen___024root* vlSelf) {

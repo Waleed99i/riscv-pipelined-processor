@@ -89,31 +89,15 @@ VL_ATTR_COLD bool Vtb_alu_controller___024root___trigger_anySet__stl(const VlUnp
     return (0U);
 }
 
+void Vtb_alu_controller___024root___act_sequent__TOP__0(Vtb_alu_controller___024root* vlSelf);
+
 VL_ATTR_COLD void Vtb_alu_controller___024root___eval_stl(Vtb_alu_controller___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_alu_controller___024root___eval_stl\n"); );
     Vtb_alu_controller__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     if ((1ULL & vlSelfRef.__VstlTriggered[0U])) {
-        vlSelfRef.tb_alu_controller__DOT__alu_operation 
-            = ((2U & (IData)(vlSelfRef.tb_alu_controller__DOT__alu_op))
-                ? ((4U & (IData)(vlSelfRef.tb_alu_controller__DOT__func3))
-                    ? ((2U & (IData)(vlSelfRef.tb_alu_controller__DOT__func3))
-                        ? (1U & (- (IData)((1U & (~ (IData)(vlSelfRef.tb_alu_controller__DOT__func3))))))
-                        : ((1U & (IData)(vlSelfRef.tb_alu_controller__DOT__func3))
-                            ? ((0x20U == (IData)(vlSelfRef.tb_alu_controller__DOT__func7))
-                                ? 7U : 5U) : 3U)) : 
-                   ((2U & (IData)(vlSelfRef.tb_alu_controller__DOT__func3))
-                     ? ((1U & (IData)(vlSelfRef.tb_alu_controller__DOT__func3))
-                         ? 9U : 8U) : ((1U & (IData)(vlSelfRef.tb_alu_controller__DOT__func3))
-                                        ? 4U : (((0x20U 
-                                                  == (IData)(vlSelfRef.tb_alu_controller__DOT__func7)) 
-                                                 & (2U 
-                                                    == (IData)(vlSelfRef.tb_alu_controller__DOT__alu_op)))
-                                                 ? 6U
-                                                 : 2U))))
-                : ((1U & (IData)(vlSelfRef.tb_alu_controller__DOT__alu_op))
-                    ? 6U : 2U));
+        Vtb_alu_controller___024root___act_sequent__TOP__0(vlSelf);
     }
 }
 
@@ -161,7 +145,7 @@ VL_ATTR_COLD void Vtb_alu_controller___024root___ctor_var_reset(Vtb_alu_controll
     vlSelf->tb_alu_controller__DOT__alu_op = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 17152986168080297986ull);
     vlSelf->tb_alu_controller__DOT__func3 = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 13941672032463242100ull);
     vlSelf->tb_alu_controller__DOT__func7 = VL_SCOPED_RAND_RESET_I(7, __VscopeHash, 892883098171858177ull);
-    vlSelf->tb_alu_controller__DOT__alu_operation = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 6387862203567849519ull);
+    vlSelf->tb_alu_controller__DOT__dut__DOT__alu_operation = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 12711056179309191003ull);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }

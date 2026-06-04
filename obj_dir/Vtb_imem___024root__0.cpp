@@ -18,29 +18,26 @@ VlCoroutine Vtb_imem___024root___eval_initial__TOP__Vtiming__0(Vtb_imem___024roo
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_imem___024root___eval_initial__TOP__Vtiming__0\n"); );
     Vtb_imem__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    IData/*31:0*/ tb_imem__DOT__addr;
-    tb_imem__DOT__addr = 0;
     // Body
     vlSelfRef.tb_imem__DOT__dut__DOT__memory[0U] = 0xdeadbeefU;
     vlSelfRef.tb_imem__DOT__dut__DOT__memory[1U] = 0xcafebabeU;
-    tb_imem__DOT__addr = 0U;
+    vlSelfRef.tb_imem__DOT__addr = 0U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_imem.sv", 
                                          16);
     if (VL_UNLIKELY(((0xdeadbeefU != vlSelfRef.tb_imem__DOT__dut__DOT__memory
-                      [(0x000fffffU & (tb_imem__DOT__addr 
+                      [(0x000fffffU & (vlSelfRef.tb_imem__DOT__addr 
                                        >> 2U))])))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_imem.sv:16: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_imem", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_imem.sv", 16, "", false);
     }
-    tb_imem__DOT__addr = 4U;
+    vlSelfRef.tb_imem__DOT__addr = 4U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_imem.sv", 
                                          17);
     if (VL_UNLIKELY(((0xcafebabeU != vlSelfRef.tb_imem__DOT__dut__DOT__memory
-                      [(0x000fffffU & (tb_imem__DOT__addr 
+                      [(0x000fffffU & (vlSelfRef.tb_imem__DOT__addr 
                                        >> 2U))])))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_imem.sv:17: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_imem", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));

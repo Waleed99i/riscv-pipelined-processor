@@ -145,7 +145,7 @@ VL_ATTR_COLD void Vtb_alu___024root___ctor_var_reset(Vtb_alu___024root* vlSelf) 
     vlSelf->tb_alu__DOT__opA = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10506881622544800433ull);
     vlSelf->tb_alu__DOT__opB = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 11480023015015154714ull);
     vlSelf->tb_alu__DOT__alu_operation = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 2489667675687121640ull);
-    vlSelf->tb_alu__DOT__result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 17836625834365935930ull);
+    vlSelf->tb_alu__DOT__dut__DOT__result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 13325999392979667551ull);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }
@@ -159,4 +159,7 @@ VL_ATTR_COLD void Vtb_alu___024root___ctor_var_reset(Vtb_alu___024root* vlSelf) 
         vlSelf->__VnbaTriggered[__Vi0] = 0;
     }
     vlSelf->__Vi = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vm_traceActivity[__Vi0] = 0;
+    }
 }

@@ -19,7 +19,7 @@ test: $(TESTS)
 # Individual test targets.
 $(TESTS): %: obj_dir
 	@rm -f obj_dir/sim_main.o obj_dir/sim_main.d
-	@$(VERILATOR) --cc --exe -sv --timing --top-module $* -Isrc $(SRC) tests/$*.sv tests/sim_main.cpp -CFLAGS "-DTOP_CLASS=V$*" -Mdir obj_dir -o V$*
+	@$(VERILATOR) --cc --exe -sv --timing --trace --top-module $* -Isrc $(SRC) tests/$*.sv tests/sim_main.cpp -CFLAGS "-DTOP_CLASS=V$*" -Mdir obj_dir -o V$*
 	@$(MAKE) -C obj_dir -f V$*.mk -j -s
 	@./obj_dir/V$*
 

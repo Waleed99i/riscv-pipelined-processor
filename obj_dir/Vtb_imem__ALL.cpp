@@ -2,6 +2,9 @@
 #define VL_INCLUDE_OPT include
 #include "Vtb_imem.cpp"
 #include "Vtb_imem___024root__0.cpp"
+#include "Vtb_imem__Trace__0.cpp"
 #include "Vtb_imem___024root__Slow.cpp"
 #include "Vtb_imem___024root__0__Slow.cpp"
 #include "Vtb_imem__Syms__Slow.cpp"
+#include "Vtb_imem__Trace__0__Slow.cpp"
+#include "Vtb_imem__TraceDecls__0__Slow.cpp"

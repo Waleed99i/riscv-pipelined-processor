@@ -18,7 +18,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_alu_controller___024root final {
     CData/*1:0*/ tb_alu_controller__DOT__alu_op;
     CData/*2:0*/ tb_alu_controller__DOT__func3;
     CData/*6:0*/ tb_alu_controller__DOT__func7;
-    CData/*3:0*/ tb_alu_controller__DOT__alu_operation;
+    CData/*3:0*/ tb_alu_controller__DOT__dut__DOT__alu_operation;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __VactPhaseResult;

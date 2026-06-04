@@ -18,6 +18,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_imem___024root final {
     CData/*0:0*/ __VactPhaseResult;
     CData/*0:0*/ __VinactPhaseResult;
     CData/*0:0*/ __VnbaPhaseResult;
+    IData/*31:0*/ tb_imem__DOT__addr;
     IData/*31:0*/ __VactIterCount;
     IData/*31:0*/ __VinactIterCount;
     IData/*31:0*/ __Vi;

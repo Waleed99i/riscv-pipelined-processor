@@ -13,6 +13,7 @@ void Vtb_RegisterFile___024root___eval_initial(Vtb_RegisterFile___024root* vlSel
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(vlSelf);
+    vlSelfRef.__Vm_traceActivity[1U] = 1U;
     Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__1(vlSelf);
 }
 
@@ -22,9 +23,6 @@ VlCoroutine Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(Vtb_Regis
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0\n"); );
     Vtb_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    CData/*4:0*/ tb_RegisterFile__DOT__rs1;
-    tb_RegisterFile__DOT__rs1 = 0;
     // Body
     vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf[0U] = 0U;
     vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf[1U] = 0U;
@@ -59,7 +57,8 @@ VlCoroutine Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(Vtb_Regis
     vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf[30U] = 0U;
     vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf[31U] = 0U;
     vlSelfRef.tb_RegisterFile__DOT__we_rf = 0U;
-    tb_RegisterFile__DOT__rs1 = 0U;
+    vlSelfRef.tb_RegisterFile__DOT__rs1 = 0U;
+    vlSelfRef.tb_RegisterFile__DOT__rs2 = 0U;
     Vtb_RegisterFile___024root____VbeforeTrig_hd8ad563f__0(vlSelf, 
                                                            "@(posedge tb_RegisterFile.clk)");
     co_await vlSelfRef.__VtrigSched_hd8ad563f__0.trigger(0U, 
@@ -67,6 +66,7 @@ VlCoroutine Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(Vtb_Regis
                                                          "@(posedge tb_RegisterFile.clk)", 
                                                          "tests/tb_RegisterFile.sv", 
                                                          25);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_RegisterFile__DOT__waddr_rf = 1U;
     vlSelfRef.tb_RegisterFile__DOT__wd_rf = 0xdeadbeefU;
     vlSelfRef.tb_RegisterFile__DOT__we_rf = 1U;
@@ -77,8 +77,10 @@ VlCoroutine Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(Vtb_Regis
                                                          "@(posedge tb_RegisterFile.clk)", 
                                                          "tests/tb_RegisterFile.sv", 
                                                          27);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_RegisterFile__DOT__we_rf = 0U;
-    tb_RegisterFile__DOT__rs1 = 1U;
+    vlSelfRef.tb_RegisterFile__DOT__rs1 = 1U;
+    vlSelfRef.tb_RegisterFile__DOT__rs2 = 0U;
     Vtb_RegisterFile___024root____VbeforeTrig_hd8ad563f__0(vlSelf, 
                                                            "@(posedge tb_RegisterFile.clk)");
     co_await vlSelfRef.__VtrigSched_hd8ad563f__0.trigger(0U, 
@@ -86,11 +88,8 @@ VlCoroutine Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(Vtb_Regis
                                                          "@(posedge tb_RegisterFile.clk)", 
                                                          "tests/tb_RegisterFile.sv", 
                                                          28);
-    if (VL_UNLIKELY(((0xdeadbeefU != (vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf
-                                      [tb_RegisterFile__DOT__rs1] 
-                                      & (- (IData)(
-                                                   (0U 
-                                                    != (IData)(tb_RegisterFile__DOT__rs1))))))))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((0xdeadbeefU != vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rd1)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_RegisterFile.sv:29: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_RegisterFile", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_RegisterFile.sv", 29, "", false);
@@ -105,6 +104,7 @@ VlCoroutine Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(Vtb_Regis
                                                          "@(posedge tb_RegisterFile.clk)", 
                                                          "tests/tb_RegisterFile.sv", 
                                                          31);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_RegisterFile__DOT__we_rf = 0U;
     Vtb_RegisterFile___024root____VbeforeTrig_hd8ad563f__0(vlSelf, 
                                                            "@(posedge tb_RegisterFile.clk)");
@@ -113,6 +113,7 @@ VlCoroutine Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(Vtb_Regis
                                                          "@(posedge tb_RegisterFile.clk)", 
                                                          "tests/tb_RegisterFile.sv", 
                                                          32);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (VL_UNLIKELY(((0U != vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf[0U])))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_RegisterFile.sv:33: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_RegisterFile", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
@@ -120,6 +121,7 @@ VlCoroutine Vtb_RegisterFile___024root___eval_initial__TOP__Vtiming__0(Vtb_Regis
     }
     VL_WRITEF_NX("\033[0;32mtb_RegisterFile PASS\033[0m\n",0);
     VL_FINISH_MT("tests/tb_RegisterFile.sv", 36, "");
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_return;
 }
 
@@ -168,6 +170,28 @@ bool Vtb_RegisterFile___024root___trigger_anySet__act(const VlUnpacked<QData/*63
     return (0U);
 }
 
+void Vtb_RegisterFile___024root___act_sequent__TOP__0(Vtb_RegisterFile___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_RegisterFile___024root___act_sequent__TOP__0\n"); );
+    Vtb_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rd1 = 
+        (vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf
+         [vlSelfRef.tb_RegisterFile__DOT__rs1] & (- (IData)(
+                                                            (0U 
+                                                             != (IData)(vlSelfRef.tb_RegisterFile__DOT__rs1)))));
+}
+
+void Vtb_RegisterFile___024root___eval_act(Vtb_RegisterFile___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_RegisterFile___024root___eval_act\n"); );
+    Vtb_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    if ((1ULL & vlSelfRef.__VactTriggered[0U])) {
+        Vtb_RegisterFile___024root___act_sequent__TOP__0(vlSelf);
+    }
+}
+
 void Vtb_RegisterFile___024root___nba_sequent__TOP__0(Vtb_RegisterFile___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_RegisterFile___024root___nba_sequent__TOP__0\n"); );
     Vtb_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -194,35 +218,21 @@ void Vtb_RegisterFile___024root___nba_sequent__TOP__0(Vtb_RegisterFile___024root
         vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf[__VdlyDim0__tb_RegisterFile__DOT__dut__DOT__rf__v0] 
             = __VdlyVal__tb_RegisterFile__DOT__dut__DOT__rf__v0;
     }
+    vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rd1 = 
+        (vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf
+         [vlSelfRef.tb_RegisterFile__DOT__rs1] & (- (IData)(
+                                                            (0U 
+                                                             != (IData)(vlSelfRef.tb_RegisterFile__DOT__rs1)))));
 }
 
 void Vtb_RegisterFile___024root___eval_nba(Vtb_RegisterFile___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_RegisterFile___024root___eval_nba\n"); );
     Vtb_RegisterFile__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    IData/*31:0*/ __Vinline__nba_sequent__TOP__0___VdlyVal__tb_RegisterFile__DOT__dut__DOT__rf__v0;
-    __Vinline__nba_sequent__TOP__0___VdlyVal__tb_RegisterFile__DOT__dut__DOT__rf__v0 = 0;
-    CData/*4:0*/ __Vinline__nba_sequent__TOP__0___VdlyDim0__tb_RegisterFile__DOT__dut__DOT__rf__v0;
-    __Vinline__nba_sequent__TOP__0___VdlyDim0__tb_RegisterFile__DOT__dut__DOT__rf__v0 = 0;
-    CData/*0:0*/ __Vinline__nba_sequent__TOP__0___VdlySet__tb_RegisterFile__DOT__dut__DOT__rf__v0;
-    __Vinline__nba_sequent__TOP__0___VdlySet__tb_RegisterFile__DOT__dut__DOT__rf__v0 = 0;
     // Body
     if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
-        __Vinline__nba_sequent__TOP__0___VdlySet__tb_RegisterFile__DOT__dut__DOT__rf__v0 = 0U;
-        if (vlSelfRef.tb_RegisterFile__DOT__we_rf) {
-            if ((0U != (IData)(vlSelfRef.tb_RegisterFile__DOT__waddr_rf))) {
-                __Vinline__nba_sequent__TOP__0___VdlyVal__tb_RegisterFile__DOT__dut__DOT__rf__v0 
-                    = vlSelfRef.tb_RegisterFile__DOT__wd_rf;
-                __Vinline__nba_sequent__TOP__0___VdlyDim0__tb_RegisterFile__DOT__dut__DOT__rf__v0 
-                    = vlSelfRef.tb_RegisterFile__DOT__waddr_rf;
-                __Vinline__nba_sequent__TOP__0___VdlySet__tb_RegisterFile__DOT__dut__DOT__rf__v0 = 1U;
-            }
-        }
-        if (__Vinline__nba_sequent__TOP__0___VdlySet__tb_RegisterFile__DOT__dut__DOT__rf__v0) {
-            vlSelfRef.tb_RegisterFile__DOT__dut__DOT__rf[__Vinline__nba_sequent__TOP__0___VdlyDim0__tb_RegisterFile__DOT__dut__DOT__rf__v0] 
-                = __Vinline__nba_sequent__TOP__0___VdlyVal__tb_RegisterFile__DOT__dut__DOT__rf__v0;
-        }
+        Vtb_RegisterFile___024root___nba_sequent__TOP__0(vlSelf);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
     }
 }
 
@@ -285,6 +295,7 @@ bool Vtb_RegisterFile___024root___eval_phase__act(Vtb_RegisterFile___024root* vl
     if (__VactExecute) {
         vlSelfRef.__VactTriggeredAcc.fill(0ULL);
         Vtb_RegisterFile___024root___timing_resume(vlSelf);
+        Vtb_RegisterFile___024root___eval_act(vlSelf);
     }
     return (__VactExecute);
 }

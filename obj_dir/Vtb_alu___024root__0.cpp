@@ -12,6 +12,7 @@ void Vtb_alu___024root___eval_initial(Vtb_alu___024root* vlSelf) {
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     Vtb_alu___024root___eval_initial__TOP__Vtiming__0(vlSelf);
+    vlSelfRef.__Vm_traceActivity[1U] = 1U;
 }
 
 VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root* vlSelf) {
@@ -25,7 +26,8 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          19);
-    if (VL_UNLIKELY(((0x0f000f00U != vlSelfRef.tb_alu__DOT__result)))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((0x0f000f00U != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:19: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 19, "", false);
@@ -34,7 +36,8 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          20);
-    if (VL_UNLIKELY(((0xff0fff0fU != vlSelfRef.tb_alu__DOT__result)))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((0xff0fff0fU != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:20: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 20, "", false);
@@ -43,7 +46,8 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          21);
-    if (VL_UNLIKELY(((0x0e100e0fU != vlSelfRef.tb_alu__DOT__result)))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((0x0e100e0fU != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:21: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 21, "", false);
@@ -52,7 +56,8 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          22);
-    if (VL_UNLIKELY(((0xf00ff00fU != vlSelfRef.tb_alu__DOT__result)))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((0xf00ff00fU != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:22: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 22, "", false);
@@ -63,7 +68,8 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          23);
-    if (VL_UNLIKELY(((8U != vlSelfRef.tb_alu__DOT__result)))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((8U != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:23: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 23, "", false);
@@ -74,7 +80,8 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          24);
-    if (VL_UNLIKELY(((0x40000000U != vlSelfRef.tb_alu__DOT__result)))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((0x40000000U != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:24: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 24, "", false);
@@ -85,7 +92,8 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          25);
-    if (VL_UNLIKELY(((0x0000000fU != vlSelfRef.tb_alu__DOT__result)))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((0x0000000fU != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:25: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 25, "", false);
@@ -96,7 +104,8 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          26);
-    if (VL_UNLIKELY(((0xffffffffU != vlSelfRef.tb_alu__DOT__result)))) {
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY(((0xffffffffU != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:26: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 26, "", false);
@@ -107,10 +116,11 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          27);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_alu__DOT__alu_operation = 9U;
     vlSelfRef.tb_alu__DOT__opA = 3U;
     vlSelfRef.tb_alu__DOT__opB = 5U;
-    if (VL_UNLIKELY(((1U != vlSelfRef.tb_alu__DOT__result)))) {
+    if (VL_UNLIKELY(((1U != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:27: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 27, "", false);
@@ -118,13 +128,15 @@ VlCoroutine Vtb_alu___024root___eval_initial__TOP__Vtiming__0(Vtb_alu___024root*
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_alu.sv", 
                                          28);
-    if (VL_UNLIKELY(((1U != vlSelfRef.tb_alu__DOT__result)))) {
+    if (VL_UNLIKELY(((1U != vlSelfRef.tb_alu__DOT__dut__DOT__result)))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_alu.sv:28: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_alu", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_alu.sv", 28, "", false);
     }
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("\033[0;32mtb_alu PASS\033[0m\n",0);
     VL_FINISH_MT("tests/tb_alu.sv", 30, "");
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_return;
 }
 
@@ -156,65 +168,80 @@ void Vtb_alu___024root___act_sequent__TOP__0(Vtb_alu___024root* vlSelf) {
     Vtb_alu__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.tb_alu__DOT__result = ((8U & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                      ? ((- (IData)(
-                                                    (1U 
-                                                     & (~ 
-                                                        ((IData)(vlSelfRef.tb_alu__DOT__alu_operation) 
-                                                         >> 1U))))) 
-                                         & (((1U & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                              ? (1U 
-                                                 & (- (IData)(
-                                                              (vlSelfRef.tb_alu__DOT__opA 
-                                                               < vlSelfRef.tb_alu__DOT__opB))))
-                                              : (1U 
-                                                 & (- (IData)(
-                                                              VL_LTS_III(32, vlSelfRef.tb_alu__DOT__opA, vlSelfRef.tb_alu__DOT__opB))))) 
-                                            & (- (IData)(
-                                                         (1U 
-                                                          & (~ 
-                                                             ((IData)(vlSelfRef.tb_alu__DOT__alu_operation) 
-                                                              >> 2U)))))))
-                                      : ((4U & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                          ? ((2U & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                              ? ((1U 
-                                                  & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                                  ? 
-                                                 VL_SHIFTRS_III(32,32,5, vlSelfRef.tb_alu__DOT__opA, 
-                                                                (0x0000001fU 
-                                                                 & vlSelfRef.tb_alu__DOT__opB))
-                                                  : 
-                                                 (vlSelfRef.tb_alu__DOT__opA 
-                                                  - vlSelfRef.tb_alu__DOT__opB))
-                                              : ((1U 
-                                                  & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                                  ? 
-                                                 (vlSelfRef.tb_alu__DOT__opA 
-                                                  >> 
-                                                  (0x0000001fU 
-                                                   & vlSelfRef.tb_alu__DOT__opB))
-                                                  : 
-                                                 (vlSelfRef.tb_alu__DOT__opA 
-                                                  << 
-                                                  (0x0000001fU 
-                                                   & vlSelfRef.tb_alu__DOT__opB))))
-                                          : ((2U & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                              ? ((1U 
-                                                  & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                                  ? 
-                                                 (vlSelfRef.tb_alu__DOT__opA 
-                                                  ^ vlSelfRef.tb_alu__DOT__opB)
-                                                  : 
-                                                 (vlSelfRef.tb_alu__DOT__opA 
-                                                  + vlSelfRef.tb_alu__DOT__opB))
-                                              : ((1U 
-                                                  & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
-                                                  ? 
-                                                 (vlSelfRef.tb_alu__DOT__opA 
-                                                  | vlSelfRef.tb_alu__DOT__opB)
-                                                  : 
-                                                 (vlSelfRef.tb_alu__DOT__opA 
-                                                  & vlSelfRef.tb_alu__DOT__opB)))));
+    vlSelfRef.tb_alu__DOT__dut__DOT__result = ((8U 
+                                                & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                ? (
+                                                   (- (IData)(
+                                                              (1U 
+                                                               & (~ 
+                                                                  ((IData)(vlSelfRef.tb_alu__DOT__alu_operation) 
+                                                                   >> 1U))))) 
+                                                   & (((1U 
+                                                        & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                        ? 
+                                                       (1U 
+                                                        & (- (IData)(
+                                                                     (vlSelfRef.tb_alu__DOT__opA 
+                                                                      < vlSelfRef.tb_alu__DOT__opB))))
+                                                        : 
+                                                       (1U 
+                                                        & (- (IData)(
+                                                                     VL_LTS_III(32, vlSelfRef.tb_alu__DOT__opA, vlSelfRef.tb_alu__DOT__opB))))) 
+                                                      & (- (IData)(
+                                                                   (1U 
+                                                                    & (~ 
+                                                                       ((IData)(vlSelfRef.tb_alu__DOT__alu_operation) 
+                                                                        >> 2U)))))))
+                                                : (
+                                                   (4U 
+                                                    & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                    ? 
+                                                   ((2U 
+                                                     & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                     ? 
+                                                    ((1U 
+                                                      & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                      ? 
+                                                     VL_SHIFTRS_III(32,32,5, vlSelfRef.tb_alu__DOT__opA, 
+                                                                    (0x0000001fU 
+                                                                     & vlSelfRef.tb_alu__DOT__opB))
+                                                      : 
+                                                     (vlSelfRef.tb_alu__DOT__opA 
+                                                      - vlSelfRef.tb_alu__DOT__opB))
+                                                     : 
+                                                    ((1U 
+                                                      & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                      ? 
+                                                     (vlSelfRef.tb_alu__DOT__opA 
+                                                      >> 
+                                                      (0x0000001fU 
+                                                       & vlSelfRef.tb_alu__DOT__opB))
+                                                      : 
+                                                     (vlSelfRef.tb_alu__DOT__opA 
+                                                      << 
+                                                      (0x0000001fU 
+                                                       & vlSelfRef.tb_alu__DOT__opB))))
+                                                    : 
+                                                   ((2U 
+                                                     & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                     ? 
+                                                    ((1U 
+                                                      & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                      ? 
+                                                     (vlSelfRef.tb_alu__DOT__opA 
+                                                      ^ vlSelfRef.tb_alu__DOT__opB)
+                                                      : 
+                                                     (vlSelfRef.tb_alu__DOT__opA 
+                                                      + vlSelfRef.tb_alu__DOT__opB))
+                                                     : 
+                                                    ((1U 
+                                                      & (IData)(vlSelfRef.tb_alu__DOT__alu_operation))
+                                                      ? 
+                                                     (vlSelfRef.tb_alu__DOT__opA 
+                                                      | vlSelfRef.tb_alu__DOT__opB)
+                                                      : 
+                                                     (vlSelfRef.tb_alu__DOT__opA 
+                                                      & vlSelfRef.tb_alu__DOT__opB)))));
 }
 
 void Vtb_alu___024root___eval_act(Vtb_alu___024root* vlSelf) {

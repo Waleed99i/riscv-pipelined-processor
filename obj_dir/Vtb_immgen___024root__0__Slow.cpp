@@ -143,7 +143,7 @@ VL_ATTR_COLD void Vtb_immgen___024root___ctor_var_reset(Vtb_immgen___024root* vl
     // Body
     const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
     vlSelf->tb_immgen__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4581529893400865331ull);
-    vlSelf->tb_immgen__DOT__immediate = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 18003627533177951417ull);
+    vlSelf->tb_immgen__DOT__dut__DOT__immediate = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 1590767165007578607ull);
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
     }

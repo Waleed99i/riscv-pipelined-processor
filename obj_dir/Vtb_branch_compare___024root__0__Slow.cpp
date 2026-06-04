@@ -89,27 +89,15 @@ VL_ATTR_COLD bool Vtb_branch_compare___024root___trigger_anySet__stl(const VlUnp
     return (0U);
 }
 
-extern const VlUnpacked<CData/*0:0*/, 64> Vtb_branch_compare__ConstPool__TABLE_hfe2569db_0;
+void Vtb_branch_compare___024root___act_sequent__TOP__0(Vtb_branch_compare___024root* vlSelf);
 
 VL_ATTR_COLD void Vtb_branch_compare___024root___eval_stl(Vtb_branch_compare___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_branch_compare___024root___eval_stl\n"); );
     Vtb_branch_compare__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    CData/*5:0*/ __Vinline__act_sequent__TOP__0___Vtableidx1;
-    __Vinline__act_sequent__TOP__0___Vtableidx1 = 0;
     // Body
     if ((1ULL & vlSelfRef.__VstlTriggered[0U])) {
-        __Vinline__act_sequent__TOP__0___Vtableidx1 
-            = (((vlSelfRef.tb_branch_compare__DOT__rs1 
-                 < vlSelfRef.tb_branch_compare__DOT__rs2) 
-                << 5U) | ((VL_LTS_III(32, vlSelfRef.tb_branch_compare__DOT__rs1, vlSelfRef.tb_branch_compare__DOT__rs2) 
-                           << 4U) | (((vlSelfRef.tb_branch_compare__DOT__rs1 
-                                       == vlSelfRef.tb_branch_compare__DOT__rs2) 
-                                      << 3U) | (IData)(vlSelfRef.tb_branch_compare__DOT__br_cond))));
-        vlSelfRef.tb_branch_compare__DOT__branch_taken 
-            = Vtb_branch_compare__ConstPool__TABLE_hfe2569db_0
-            [__Vinline__act_sequent__TOP__0___Vtableidx1];
+        Vtb_branch_compare___024root___act_sequent__TOP__0(vlSelf);
     }
 }
 
@@ -171,4 +159,7 @@ VL_ATTR_COLD void Vtb_branch_compare___024root___ctor_var_reset(Vtb_branch_compa
         vlSelf->__VnbaTriggered[__Vi0] = 0;
     }
     vlSelf->__Vi = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vm_traceActivity[__Vi0] = 0;
+    }
 }

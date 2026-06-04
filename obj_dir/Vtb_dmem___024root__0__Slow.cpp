@@ -4,21 +4,15 @@
 
 #include "Vtb_dmem__pch.h"
 
+VL_ATTR_COLD void Vtb_dmem___024root___eval_static__TOP(Vtb_dmem___024root* vlSelf);
 void Vtb_dmem___024root___timing_ready(Vtb_dmem___024root* vlSelf);
 
 VL_ATTR_COLD void Vtb_dmem___024root___eval_static(Vtb_dmem___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_dmem___024root___eval_static\n"); );
     Vtb_dmem__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    IData/*31:0*/ __Vinline__eval_static__TOP_tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word;
-    __Vinline__eval_static__TOP_tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word = 0;
     // Body
-    vlSelfRef.tb_dmem__DOT__clk = 0U;
-    __Vinline__eval_static__TOP_tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word = 0;
-    const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
-    vlSelf->tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__half_word = VL_SCOPED_RAND_RESET_I(16, __VscopeHash, 12875038878111330825ull);
-    vlSelf->tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__byte_val = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 3565678149135751899ull);
+    Vtb_dmem___024root___eval_static__TOP(vlSelf);
     vlSelfRef.__Vtrigprevexpr___TOP__tb_dmem__DOT__clk__0 = 0U;
     Vtb_dmem___024root___timing_ready(vlSelf);
     do {
@@ -32,13 +26,10 @@ VL_ATTR_COLD void Vtb_dmem___024root___eval_static__TOP(Vtb_dmem___024root* vlSe
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_dmem___024root___eval_static__TOP\n"); );
     Vtb_dmem__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    IData/*31:0*/ tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word;
-    tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word = 0;
     // Body
     vlSelfRef.tb_dmem__DOT__clk = 0U;
-    tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word = 0;
     const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
+    vlSelf->tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8687072730576978870ull);
     vlSelf->tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__half_word = VL_SCOPED_RAND_RESET_I(16, __VscopeHash, 12875038878111330825ull);
     vlSelf->tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__byte_val = VL_SCOPED_RAND_RESET_I(8, __VscopeHash, 3565678149135751899ull);
 }
@@ -196,4 +187,7 @@ VL_ATTR_COLD void Vtb_dmem___024root___ctor_var_reset(Vtb_dmem___024root* vlSelf
         vlSelf->__VnbaTriggered[__Vi0] = 0;
     }
     vlSelf->__Vi = 0;
+    for (int __Vi0 = 0; __Vi0 < 3; ++__Vi0) {
+        vlSelf->__Vm_traceActivity[__Vi0] = 0;
+    }
 }

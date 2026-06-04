@@ -31,6 +31,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_dmem___024root final {
     IData/*31:0*/ tb_dmem__DOT__addr;
     IData/*31:0*/ tb_dmem__DOT__mem_wdata;
     IData/*31:0*/ tb_dmem__DOT__mem_rdata;
+    IData/*31:0*/ tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word;
     IData/*31:0*/ __VactIterCount;
     IData/*31:0*/ __VinactIterCount;
     IData/*31:0*/ __Vi;
@@ -39,6 +40,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_dmem___024root final {
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggeredAcc;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
+    VlUnpacked<CData/*0:0*/, 3> __Vm_traceActivity;
     VlDelayScheduler __VdlySched;
     VlTriggerScheduler __VtrigSched_hc9da3785__0;
 

@@ -12,6 +12,7 @@ void Vtb_branch_compare___024root___eval_initial(Vtb_branch_compare___024root* v
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     Vtb_branch_compare___024root___eval_initial__TOP__Vtiming__0(vlSelf);
+    vlSelfRef.__Vm_traceActivity[1U] = 1U;
 }
 
 VlCoroutine Vtb_branch_compare___024root___eval_initial__TOP__Vtiming__0(Vtb_branch_compare___024root* vlSelf) {
@@ -25,6 +26,7 @@ VlCoroutine Vtb_branch_compare___024root___eval_initial__TOP__Vtiming__0(Vtb_bra
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_branch_compare.sv", 
                                          16);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_branch_compare__DOT__br_cond = 1U;
     if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.tb_branch_compare__DOT__branch_taken)))))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_branch_compare.sv:16: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_branch_compare", 'T',-12
@@ -34,6 +36,7 @@ VlCoroutine Vtb_branch_compare___024root___eval_initial__TOP__Vtiming__0(Vtb_bra
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_branch_compare.sv", 
                                          17);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_branch_compare__DOT__rs1 = 0xfffffffdU;
     vlSelfRef.tb_branch_compare__DOT__rs2 = 2U;
     vlSelfRef.tb_branch_compare__DOT__br_cond = 4U;
@@ -45,6 +48,7 @@ VlCoroutine Vtb_branch_compare___024root___eval_initial__TOP__Vtiming__0(Vtb_bra
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_branch_compare.sv", 
                                          18);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_branch_compare__DOT__br_cond = 5U;
     if (VL_UNLIKELY(((1U & (~ (IData)(vlSelfRef.tb_branch_compare__DOT__branch_taken)))))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_branch_compare.sv:18: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_branch_compare", 'T',-12
@@ -54,6 +58,7 @@ VlCoroutine Vtb_branch_compare___024root___eval_initial__TOP__Vtiming__0(Vtb_bra
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_branch_compare.sv", 
                                          19);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_branch_compare__DOT__rs1 = 1U;
     vlSelfRef.tb_branch_compare__DOT__rs2 = 2U;
     vlSelfRef.tb_branch_compare__DOT__br_cond = 6U;
@@ -70,6 +75,7 @@ VlCoroutine Vtb_branch_compare___024root___eval_initial__TOP__Vtiming__0(Vtb_bra
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_branch_compare.sv", 20, "", false);
     }
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_branch_compare__DOT__br_cond = 7U;
     co_await vlSelfRef.__VdlySched.delay(1ULL, nullptr, 
                                          "tests/tb_branch_compare.sv", 
@@ -79,8 +85,10 @@ VlCoroutine Vtb_branch_compare___024root___eval_initial__TOP__Vtiming__0(Vtb_bra
                      , '#',64,VL_TIME_UNITED_Q(1));
         VL_STOP_MT("tests/tb_branch_compare.sv", 21, "", false);
     }
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("\033[0;32mtb_branch_compare PASS\033[0m\n",0);
     VL_FINISH_MT("tests/tb_branch_compare.sv", 23, "");
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_return;
 }
 
@@ -132,21 +140,9 @@ void Vtb_branch_compare___024root___eval_act(Vtb_branch_compare___024root* vlSel
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_branch_compare___024root___eval_act\n"); );
     Vtb_branch_compare__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    CData/*5:0*/ __Vinline__act_sequent__TOP__0___Vtableidx1;
-    __Vinline__act_sequent__TOP__0___Vtableidx1 = 0;
     // Body
     if ((1ULL & vlSelfRef.__VactTriggered[0U])) {
-        __Vinline__act_sequent__TOP__0___Vtableidx1 
-            = (((vlSelfRef.tb_branch_compare__DOT__rs1 
-                 < vlSelfRef.tb_branch_compare__DOT__rs2) 
-                << 5U) | ((VL_LTS_III(32, vlSelfRef.tb_branch_compare__DOT__rs1, vlSelfRef.tb_branch_compare__DOT__rs2) 
-                           << 4U) | (((vlSelfRef.tb_branch_compare__DOT__rs1 
-                                       == vlSelfRef.tb_branch_compare__DOT__rs2) 
-                                      << 3U) | (IData)(vlSelfRef.tb_branch_compare__DOT__br_cond))));
-        vlSelfRef.tb_branch_compare__DOT__branch_taken 
-            = Vtb_branch_compare__ConstPool__TABLE_hfe2569db_0
-            [__Vinline__act_sequent__TOP__0___Vtableidx1];
+        Vtb_branch_compare___024root___act_sequent__TOP__0(vlSelf);
     }
 }
 
@@ -154,21 +150,9 @@ void Vtb_branch_compare___024root___eval_nba(Vtb_branch_compare___024root* vlSel
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_branch_compare___024root___eval_nba\n"); );
     Vtb_branch_compare__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    CData/*5:0*/ __Vinline__act_sequent__TOP__0___Vtableidx1;
-    __Vinline__act_sequent__TOP__0___Vtableidx1 = 0;
     // Body
     if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
-        __Vinline__act_sequent__TOP__0___Vtableidx1 
-            = (((vlSelfRef.tb_branch_compare__DOT__rs1 
-                 < vlSelfRef.tb_branch_compare__DOT__rs2) 
-                << 5U) | ((VL_LTS_III(32, vlSelfRef.tb_branch_compare__DOT__rs1, vlSelfRef.tb_branch_compare__DOT__rs2) 
-                           << 4U) | (((vlSelfRef.tb_branch_compare__DOT__rs1 
-                                       == vlSelfRef.tb_branch_compare__DOT__rs2) 
-                                      << 3U) | (IData)(vlSelfRef.tb_branch_compare__DOT__br_cond))));
-        vlSelfRef.tb_branch_compare__DOT__branch_taken 
-            = Vtb_branch_compare__ConstPool__TABLE_hfe2569db_0
-            [__Vinline__act_sequent__TOP__0___Vtableidx1];
+        Vtb_branch_compare___024root___act_sequent__TOP__0(vlSelf);
     }
 }
 

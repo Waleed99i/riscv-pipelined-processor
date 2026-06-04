@@ -49,6 +49,7 @@ VL_ATTR_COLD void Vtb_imem___024root___ctor_var_reset(Vtb_imem___024root* vlSelf
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
+    vlSelf->tb_imem__DOT__addr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 18367520418109843579ull);
     for (int __Vi0 = 0; __Vi0 < 1048576; ++__Vi0) {
         vlSelf->tb_imem__DOT__dut__DOT__memory[__Vi0] = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 13893582859389703939ull);
     }

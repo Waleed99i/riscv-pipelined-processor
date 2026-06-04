@@ -11,7 +11,7 @@ Vtb_imem__Syms::Vtb_imem__Syms(VerilatedContext* contextp, const char* namep, Vt
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(198);
+    Verilated::stackCheck(194);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);

@@ -2,7 +2,10 @@
 #define VL_INCLUDE_OPT include
 #include "Vtb_cpu.cpp"
 #include "Vtb_cpu___024root__0.cpp"
+#include "Vtb_cpu__Trace__0.cpp"
 #include "Vtb_cpu__ConstPool__0__Slow.cpp"
 #include "Vtb_cpu___024root__Slow.cpp"
 #include "Vtb_cpu___024root__0__Slow.cpp"
 #include "Vtb_cpu__Syms__Slow.cpp"
+#include "Vtb_cpu__Trace__0__Slow.cpp"
+#include "Vtb_cpu__TraceDecls__0__Slow.cpp"
