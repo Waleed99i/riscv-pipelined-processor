@@ -29,4 +29,4 @@ obj_dir:
 	@mkdir -p obj_dir
 
 clean:
-	@rm -rf obj_dir
+	rm -rf obj_dir

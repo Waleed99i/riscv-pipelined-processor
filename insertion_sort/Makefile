@@ -10,10 +10,10 @@ run: $(BIN)
 
 $(ELF): $(SRCS)
 	@mkdir -p $(BUILD_DIR)
-	@riscv64-unknown-elf-gcc -o $@ $^ -T linker.ld -nostdlib -march=rv32i -mabi=ilp32 && echo "BUILT $(notdir $@)"
+	@riscv64-unknown-elf-gcc -o $@ $^ -T linker.ld -nostdlib -march=rv32i -mabi=ilp32 -ffunction-sections -fdata-sections && echo "BUILT $(notdir $@)"
 
 $(BIN): $(ELF)
-	@riscv64-unknown-elf-objcopy -O binary --only-section=.data* --only-section=.text* $^ $@ && echo "BUILT $(notdir $@)"
+	@riscv64-unknown-elf-objcopy -O binary --only-section=.data* --only-section=.text* --only-section=.rodata* $^ $@ && echo "BUILT $(notdir $@)"
 	@python maketxt.py $(BIN) > $(TXT) && echo "BUILT $(notdir $(TXT))"
 	@riscv64-unknown-elf-objdump -S -s $(ELF) > $(DUMP) && echo "BUILT $(notdir $(DUMP))"
 
