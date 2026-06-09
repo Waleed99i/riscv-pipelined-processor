@@ -1,6 +1,6 @@
 BUILD_DIR = $(abspath ./build)
 SRC_PATH = $(abspath ./src)
-SRCS = $(SRC_PATH)/*.c
+SRCS = $(wildcard $(SRC_PATH)/*.c) startup.s
 ELF = $(BUILD_DIR)/main.elf
 BIN = $(BUILD_DIR)/main.bin
 TXT = $(BUILD_DIR)/main.txt

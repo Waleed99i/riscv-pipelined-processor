@@ -2,7 +2,11 @@
 
 module cpu (
 	input clk,
-	input rst
+	input rst,
+	output logic [31:0] val0,
+	output logic [31:0] val1,
+	output logic [31:0] val2,
+	output logic [31:0] val3
 );
 
 	// ==========================================
@@ -312,7 +316,11 @@ module cpu (
 		.wmask(wmask_2),
 		.load_unsigned(load_unsigned_2),
 		.mem_wdata(forwarded_rs2_2),
-		.mem_rdata(mem_rdata_2)
+		.mem_rdata(mem_rdata_2),
+		.val0(val0),
+		.val1(val1),
+		.val2(val2),
+		.val3(val3)
 	);
 
 	// Jump & Branch PC Update Logic

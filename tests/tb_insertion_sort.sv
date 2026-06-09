@@ -1,29 +1,19 @@
 `include "opcode.vh"
 
 module tb_insertion_sort;
-    logic clk = 0;
-    logic rst = 1;
 
     cpu dut(
         .clk(clk),
         .rst(rst)
     );
 
-    always #5 clk = ~clk;
-
     initial begin
         // Initialize registers
         for (int i = 0; i < 32; i++) dut.rf_inst.rf[i] = 32'd0;
-        
-        // Initialize SP (x2) to 32. 
-        // main() allocates 32 bytes on the stack for the local array, 
-        // so the array `arr` will be placed exactly at address 0.
-        // This makes it easy to validate `dmem[0:3]`.
-        dut.rf_inst.rf[2] = 32'd32;
 
-        // Load the compiled binary (which now has main at 0x00)
-        $readmemh("insertion_sort/build/main.txt", dut.imem_inst.memory);
-        $readmemh("insertion_sort/build/main.txt", dut.dmem_inst.memory);
+        // Load the compiled binary from build_local
+        $readmemh("insertion_sort/build_local/main.txt", dut.imem_inst.memory);
+        $readmemh("insertion_sort/build_local/main.txt", dut.dmem_inst.memory);
 
         @(posedge clk);
         @(posedge clk);
