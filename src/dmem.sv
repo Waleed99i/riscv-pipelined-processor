@@ -17,7 +17,7 @@ module dmem (
     logic [31:0] memory [2048]; // 8KB dmem (2048 words)
 
     initial begin
-        $readmemh("insertion_sort/build_local/main.txt", memory);
+        $readmemh("insertion_sort/build/main.txt", memory);
     end
 
     assign val0 = memory[0];

@@ -6,7 +6,11 @@ module tb_cpu;
 
     cpu dut(
         .clk(clk),
-        .rst(rst)
+        .rst(rst),
+        .val0(),
+        .val1(),
+        .val2(),
+        .val3()
     );
 
     always #5 clk = ~clk;

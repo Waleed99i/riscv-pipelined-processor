@@ -1,19 +1,24 @@
 `include "opcode.vh"
 
 module tb_insertion_sort;
-
+		logic clk = 0;
+		logic rst = 1;
     cpu dut(
         .clk(clk),
-        .rst(rst)
+        .rst(rst),
+        .val0(),
+        .val1(),
+        .val2(),
+        .val3()
     );
-
+		always #5 clk = ~clk;
     initial begin
         // Initialize registers
         for (int i = 0; i < 32; i++) dut.rf_inst.rf[i] = 32'd0;
 
         // Load the compiled binary from build_local
-        $readmemh("insertion_sort/build_local/main.txt", dut.imem_inst.memory);
-        $readmemh("insertion_sort/build_local/main.txt", dut.dmem_inst.memory);
+        $readmemh("insertion_sort/build/main.txt", dut.imem_inst.memory);
+        $readmemh("insertion_sort/build/main.txt", dut.dmem_inst.memory);
 
         @(posedge clk);
         @(posedge clk);

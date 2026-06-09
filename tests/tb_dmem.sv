@@ -18,7 +18,11 @@ module tb_dmem;
         .wmask(wmask),
         .load_unsigned(load_unsigned),
         .mem_wdata(mem_wdata),
-        .mem_rdata(mem_rdata)
+        .mem_rdata(mem_rdata),
+        .val0(),
+        .val1(),
+        .val2(),
+        .val3()
     );
 
     always #5 clk = ~clk;

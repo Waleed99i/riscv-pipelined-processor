@@ -7,7 +7,7 @@ module imem (
     logic [31:0] memory [2048]; // 8KB imem (2048 words)
 
     initial begin
-        $readmemh("insertion_sort/build_local/main.txt", memory);
+        $readmemh("insertion_sort/build/main.txt", memory);
     end
 
     assign instr = memory[addr[12:2]];
