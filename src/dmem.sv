@@ -14,7 +14,7 @@ module dmem (
     output logic [31:0] val2,
     output logic [31:0] val3
 );
-    logic [31:0] memory [2048]; // 8KB dmem (2048 words)
+    logic [31:0] memory [256]; // 1024B dmem (256 words)
 
     initial begin
         $readmemh("insertion_sort/build/main.txt", memory);
@@ -25,8 +25,8 @@ module dmem (
     assign val2 = memory[2];
     assign val3 = memory[3];
 
-    logic [10:0] word_addr;
-    assign word_addr = addr[12:2];
+    logic [7:0] word_addr;
+    assign word_addr = addr[9:2];
 
     always_ff @(posedge clk) begin
         if (mem_wen) begin

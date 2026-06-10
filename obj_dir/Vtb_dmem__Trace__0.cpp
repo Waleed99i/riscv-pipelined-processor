@@ -30,8 +30,8 @@ void Vtb_dmem___024root__trace_chg_0_sub_0(Vtb_dmem___024root* vlSelf, Verilated
         bufp->chgCData(oldp+3,(vlSelfRef.tb_dmem__DOT__wmask),2);
         bufp->chgBit(oldp+4,(vlSelfRef.tb_dmem__DOT__load_unsigned));
         bufp->chgIData(oldp+5,(vlSelfRef.tb_dmem__DOT__mem_wdata),32);
-        bufp->chgSData(oldp+6,((0x000007ffU & (vlSelfRef.tb_dmem__DOT__addr 
-                                               >> 2U))),11);
+        bufp->chgCData(oldp+6,((0x0000007fU & (vlSelfRef.tb_dmem__DOT__addr 
+                                               >> 2U))),7);
     }
     bufp->chgBit(oldp+7,(vlSelfRef.tb_dmem__DOT__clk));
     bufp->chgIData(oldp+8,(vlSelfRef.tb_dmem__DOT__mem_rdata),32);

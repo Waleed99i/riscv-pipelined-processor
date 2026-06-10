@@ -23,7 +23,7 @@ $timescale 1ps $end
     $var wire 32 , val1 [31:0] $end
     $var wire 32 - val2 [31:0] $end
     $var wire 32 . val3 [31:0] $end
-    $var wire 11 ( word_addr [10:0] $end
+    $var wire 7 ( word_addr [6:0] $end
     $scope module unnamedblk1 $end
      $var wire 32 / current_word [31:0] $end
      $var wire 16 0 half_word [15:0] $end
@@ -42,7 +42,7 @@ b00 $
 b00 %
 0&
 b00010010001101000101011001111000 '
-b00000000000 (
+b0000000 (
 0)
 b00000000000000000000000000000000 *
 b00000000000000000000000000000000 +

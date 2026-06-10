@@ -2,7 +2,7 @@
 /media/psf/Home/Documents/riscv-pipelined-processor/insertion_sort/build/main.elf:     file format elf32-littleriscv
 
 Contents of section .vector_table:
- 0000 13010002 ef008000 6f000000           ........o...    
+ 0000 13010040 ef008000 6f000000           ...@....o...    
 Contents of section .text:
  000c 130101fe 232e1100 232c8100 13040102  ....#...#,......
  001c 93074015 03a60700 83a64700 03a78700  ..@.......G.....
@@ -38,7 +38,7 @@ Contents of section .riscv.attributes:
 Disassembly of section .vector_table:
 
 00000000 <reset_handler>:
-   0:	02000113          	li	sp,32
+   0:	40000113          	li	sp,1024
    4:	008000ef          	jal	c <main>
    8:	0000006f          	j	8 <reset_handler+0x8>
 

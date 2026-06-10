@@ -39,7 +39,7 @@ VL_ATTR_COLD void Vtb_dmem___024root___eval_initial__TOP(Vtb_dmem___024root* vlS
     Vtb_dmem__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    VL_READMEM_N(true, 32, 2048, 0, "insertion_sort/build/main.txt"s
+    VL_READMEM_N(true, 32, 128, 0, "insertion_sort/build/main.txt"s
                  ,  &(vlSelfRef.tb_dmem__DOT__dut__DOT__memory)
                  , 0, ~0ULL);
 }
@@ -180,7 +180,7 @@ VL_ATTR_COLD void Vtb_dmem___024root___ctor_var_reset(Vtb_dmem___024root* vlSelf
     vlSelf->tb_dmem__DOT__load_unsigned = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 473024781941920869ull);
     vlSelf->tb_dmem__DOT__mem_wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10372363362448340136ull);
     vlSelf->tb_dmem__DOT__mem_rdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16275729204881365249ull);
-    for (int __Vi0 = 0; __Vi0 < 2048; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 128; ++__Vi0) {
         vlSelf->tb_dmem__DOT__dut__DOT__memory[__Vi0] = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 17768193406783310322ull);
     }
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {

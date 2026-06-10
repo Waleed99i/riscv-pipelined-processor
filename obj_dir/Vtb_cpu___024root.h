@@ -45,12 +45,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_cpu___024root final {
         CData/*0:0*/ tb_cpu__DOT__dut__DOT__we_rf_3;
         CData/*4:0*/ tb_cpu__DOT__dut__DOT__waddr_rf_3;
         CData/*0:0*/ tb_cpu__DOT__dut__DOT__mem_to_reg_3;
-        CData/*3:0*/ tb_cpu__DOT__dut__DOT__alu_ctrl_inst__DOT__alu_operation;
+        CData/*3:0*/ tb_cpu__DOT__dut__DOT__alu_inst__DOT__alu_operation;
         CData/*7:0*/ tb_cpu__DOT__dut__DOT__dmem_inst__DOT__unnamedblk1__DOT__byte_val;
-        CData/*6:0*/ __VdfgRegularize_h6e95ff9d_0_0;
-        CData/*2:0*/ __VdfgRegularize_h6e95ff9d_0_1;
-        CData/*4:0*/ __VdfgRegularize_h6e95ff9d_0_2;
-        CData/*4:0*/ __VdfgRegularize_h6e95ff9d_0_3;
+        CData/*6:0*/ __VdfgRegularize_hebeb780c_0_0;
+        CData/*2:0*/ __VdfgRegularize_hebeb780c_0_1;
+        CData/*4:0*/ __VdfgRegularize_hebeb780c_0_2;
+        CData/*4:0*/ __VdfgRegularize_hebeb780c_0_3;
         CData/*0:0*/ __VstlFirstIteration;
         CData/*0:0*/ __VstlPhaseResult;
         CData/*0:0*/ __Vtrigprevexpr___TOP__tb_cpu__DOT__clk__0;
@@ -70,20 +70,20 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_cpu___024root final {
         IData/*31:0*/ tb_cpu__DOT__dut__DOT__forwarded_rs1_2;
         IData/*31:0*/ tb_cpu__DOT__dut__DOT__forwarded_rs2_2;
         IData/*31:0*/ tb_cpu__DOT__dut__DOT__alu_srcB_2;
-        IData/*31:0*/ tb_cpu__DOT__dut__DOT__wd_rf_3;
         IData/*31:0*/ tb_cpu__DOT__dut__DOT__alu_out_3;
         IData/*31:0*/ tb_cpu__DOT__dut__DOT__mem_rdata_3;
+        IData/*31:0*/ tb_cpu__DOT__dut__DOT__rf_inst__DOT__wd_rf;
         IData/*31:0*/ tb_cpu__DOT__dut__DOT__alu_inst__DOT__op_A;
         IData/*31:0*/ tb_cpu__DOT__dut__DOT__alu_inst__DOT__result;
         IData/*31:0*/ tb_cpu__DOT__dut__DOT__dmem_inst__DOT__unnamedblk1__DOT__current_word;
         IData/*31:0*/ __VactIterCount;
         IData/*31:0*/ __VinactIterCount;
         IData/*31:0*/ __Vi;
-        VlUnpacked<IData/*31:0*/, 2048> tb_cpu__DOT__dut__DOT__imem_inst__DOT__memory;
+        VlUnpacked<IData/*31:0*/, 128> tb_cpu__DOT__dut__DOT__imem_inst__DOT__memory;
         VlUnpacked<IData/*31:0*/, 32> tb_cpu__DOT__dut__DOT__rf_inst__DOT__rf;
     };
     struct {
-        VlUnpacked<IData/*31:0*/, 2048> tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory;
+        VlUnpacked<IData/*31:0*/, 128> tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory;
         VlUnpacked<QData/*63:0*/, 1> __VstlTriggered;
         VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
         VlUnpacked<QData/*63:0*/, 1> __VactTriggeredAcc;
@@ -91,7 +91,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_cpu___024root final {
         VlUnpacked<CData/*0:0*/, 5> __Vm_traceActivity;
     };
     VlDelayScheduler __VdlySched;
-    VlTriggerScheduler __VtrigSched_h122d2fab__0;
+    VlTriggerScheduler __VtrigSched_h9639f095__0;
 
     // INTERNAL VARIABLES
     Vtb_cpu__Syms* vlSymsp;

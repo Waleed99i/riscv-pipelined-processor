@@ -3,8 +3,7 @@ ENTRY( reset_handler )
 
 MEMORY
 { 
-  FLASH (rx)  : ORIGIN = 0x00000000, LENGTH = 1K
-  RAM   (rwx) : ORIGIN = 0x80000000, LENGTH = 1K
+  RAM (rwx) : ORIGIN = 0x00000000, LENGTH = 1024  /* 256 32-bit words for both imem and dmem */
 }
 
 
@@ -15,19 +14,19 @@ SECTIONS
   .vector_table :
   {
     KEEP (*(SORT_NONE(.vector_table)))
-  } >FLASH
+  } >RAM
 
   .text :
   {
     *(.text.main)
     *(.text .text.*)
-  } >FLASH
+  } >RAM
 
   .rodata :
   {
     *(.rodata .rodata.*)  
     *(.srodata .srodata.*)
-  } >FLASH
+  } >RAM
 
   . = ALIGN(4);
 
@@ -71,4 +70,7 @@ SECTIONS
     . = __stack_size;  
     PROVIDE( _sp = . ); 
   } >RAM
+
+  ASSERT(SIZEOF(.vector_table) + SIZEOF(.text) + SIZEOF(.rodata) + SIZEOF(.data) + SIZEOF(.bss) + __stack_size <= LENGTH(RAM),
+         "memory overflow: program does not fit in 256 words")
 }

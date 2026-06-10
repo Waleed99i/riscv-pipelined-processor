@@ -24,7 +24,7 @@ void Vtb_imem___024root__trace_chg_0_sub_0(Vtb_imem___024root* vlSelf, Verilated
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
     bufp->chgIData(oldp+0,(vlSelfRef.tb_imem__DOT__addr),32);
     bufp->chgIData(oldp+1,(vlSelfRef.tb_imem__DOT__dut__DOT__memory
-                           [(0x000007ffU & (vlSelfRef.tb_imem__DOT__addr 
+                           [(0x0000007fU & (vlSelfRef.tb_imem__DOT__addr 
                                             >> 2U))]),32);
 }
 

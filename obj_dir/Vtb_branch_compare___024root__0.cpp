@@ -115,7 +115,7 @@ bool Vtb_branch_compare___024root___trigger_anySet__act(const VlUnpacked<QData/*
     return (0U);
 }
 
-extern const VlUnpacked<CData/*0:0*/, 64> Vtb_branch_compare__ConstPool__TABLE_hfe2418f9_0;
+extern const VlUnpacked<CData/*0:0*/, 64> Vtb_branch_compare__ConstPool__TABLE_hfe2569db_0;
 
 void Vtb_branch_compare___024root___act_sequent__TOP__0(Vtb_branch_compare___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_branch_compare___024root___act_sequent__TOP__0\n"); );
@@ -132,7 +132,7 @@ void Vtb_branch_compare___024root___act_sequent__TOP__0(Vtb_branch_compare___024
                                             == vlSelfRef.tb_branch_compare__DOT__rs2) 
                                            << 3U) | (IData)(vlSelfRef.tb_branch_compare__DOT__br_cond))));
     vlSelfRef.tb_branch_compare__DOT__branch_taken 
-        = Vtb_branch_compare__ConstPool__TABLE_hfe2418f9_0
+        = Vtb_branch_compare__ConstPool__TABLE_hfe2569db_0
         [__Vtableidx1];
 }
 

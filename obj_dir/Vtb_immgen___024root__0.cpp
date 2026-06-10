@@ -97,12 +97,12 @@ void Vtb_immgen___024root___act_sequent__TOP__0(Vtb_immgen___024root* vlSelf) {
     Vtb_immgen__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Locals
-    IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_2;
-    __VdfgRegularize_h6e95ff9d_0_2 = 0;
-    IData/*31:0*/ __VdfgRegularize_h6e95ff9d_0_6;
-    __VdfgRegularize_h6e95ff9d_0_6 = 0;
+    IData/*31:0*/ __VdfgRegularize_hebeb780c_0_2;
+    __VdfgRegularize_hebeb780c_0_2 = 0;
+    IData/*31:0*/ __VdfgRegularize_hebeb780c_0_6;
+    __VdfgRegularize_hebeb780c_0_6 = 0;
     // Body
-    __VdfgRegularize_h6e95ff9d_0_2 = ((((- (IData)(
+    __VdfgRegularize_hebeb780c_0_2 = ((((- (IData)(
                                                    (vlSelfRef.tb_immgen__DOT__instruction 
                                                     >> 0x0000001fU))) 
                                         << 0x0000000cU) 
@@ -113,7 +113,7 @@ void Vtb_immgen___024root___act_sequent__TOP__0(Vtb_immgen___024root* vlSelf) {
                                                     == 
                                                     (3U 
                                                      & vlSelfRef.tb_immgen__DOT__instruction)))));
-    __VdfgRegularize_h6e95ff9d_0_6 = (0xfffff000U & 
+    __VdfgRegularize_hebeb780c_0_6 = (0xfffff000U & 
                                       (vlSelfRef.tb_immgen__DOT__instruction 
                                        & (- (IData)(
                                                     (3U 
@@ -152,7 +152,7 @@ void Vtb_immgen___024root___act_sequent__TOP__0(Vtb_immgen___024root* vlSelf) {
                                                   : 
                                                  ((4U 
                                                    & vlSelfRef.tb_immgen__DOT__instruction)
-                                                   ? __VdfgRegularize_h6e95ff9d_0_2
+                                                   ? __VdfgRegularize_hebeb780c_0_2
                                                    : 
                                                   ((((- (IData)(
                                                                 (vlSelfRef.tb_immgen__DOT__instruction 
@@ -184,7 +184,7 @@ void Vtb_immgen___024root___act_sequent__TOP__0(Vtb_immgen___024root* vlSelf) {
               ? ((0x00000010U & vlSelfRef.tb_immgen__DOT__instruction)
                   ? ((- (IData)((IData)((4U == (0x0000000cU 
                                                 & vlSelfRef.tb_immgen__DOT__instruction))))) 
-                     & __VdfgRegularize_h6e95ff9d_0_6)
+                     & __VdfgRegularize_hebeb780c_0_6)
                   : ((((- (IData)((vlSelfRef.tb_immgen__DOT__instruction 
                                    >> 0x0000001fU))) 
                        << 0x0000000cU) | ((0x00000fe0U 
@@ -197,11 +197,11 @@ void Vtb_immgen___024root___act_sequent__TOP__0(Vtb_immgen___024root* vlSelf) {
                                                   & vlSelfRef.tb_immgen__DOT__instruction)))))))
               : ((0x00000010U & vlSelfRef.tb_immgen__DOT__instruction)
                   ? (((4U & vlSelfRef.tb_immgen__DOT__instruction)
-                       ? __VdfgRegularize_h6e95ff9d_0_6
-                       : __VdfgRegularize_h6e95ff9d_0_2) 
+                       ? __VdfgRegularize_hebeb780c_0_6
+                       : __VdfgRegularize_hebeb780c_0_2) 
                      & (- (IData)((1U & (~ (vlSelfRef.tb_immgen__DOT__instruction 
                                             >> 3U))))))
-                  : (__VdfgRegularize_h6e95ff9d_0_2 
+                  : (__VdfgRegularize_hebeb780c_0_2 
                      & ((- (IData)((1U & (~ (vlSelfRef.tb_immgen__DOT__instruction 
                                              >> 3U))))) 
                         & (- (IData)((1U & (~ (vlSelfRef.tb_immgen__DOT__instruction 
