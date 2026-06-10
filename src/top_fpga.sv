@@ -5,7 +5,6 @@ module top_fpga (
     output logic segA, segB, segC, segD, segE, segF, segG
 );
 
-    // 1. Clock divider to run the CPU slow (1 Hz) so live sorting is visible
     logic clk_cpu;
     logic [26:0] clk_div;
     always_ff @(posedge clk or posedge rst) begin
@@ -13,7 +12,7 @@ module top_fpga (
             clk_div <= 0;
             clk_cpu <= 0;
         end else begin
-            if (clk_div == 27'd50_000_000 - 1) begin // Divide 100MHz to 1Hz
+            if (clk_div == 27'd50000 - 1) begin 
                 clk_div <= 0;
                 clk_cpu <= ~clk_cpu;
             end else begin
@@ -39,10 +38,10 @@ module top_fpga (
     assign disp_nums[1] = val2[3:0];
     assign disp_nums[2] = val1[3:0];
     assign disp_nums[3] = val0[3:0];
-    assign disp_nums[4] = 4'd0;
-    assign disp_nums[5] = 4'd0;
-    assign disp_nums[6] = 4'd0;
-    assign disp_nums[7] = 4'd0;
+    assign disp_nums[4] = 4'd1;
+    assign disp_nums[5] = 4'd1;
+    assign disp_nums[6] = 4'd1;
+    assign disp_nums[7] = 4'd1;
 
     // 4. Instantiate Display Driver running on the fast 100 MHz clock
     sim_dis display_inst (
