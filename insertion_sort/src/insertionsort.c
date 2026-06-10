@@ -15,5 +15,6 @@ void insertionSort(int arr[], int n) {
 int main() {
     int arr[4] = {2, 4, 1, 3};
     insertionSort(arr, 4);
+	while (1);
     return 0;
 }
