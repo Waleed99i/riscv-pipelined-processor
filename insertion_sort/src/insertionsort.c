@@ -1,4 +1,6 @@
-void insertionSort(int arr[], int n) {
+int arr[4] = {2, 4, 1, 3};
+
+void insertionSort(int n) {
     for (int i = 1; i < n; i++) {
         int key = arr[i];
         int j = i - 1;
@@ -13,8 +15,6 @@ void insertionSort(int arr[], int n) {
 }
 
 int main() {
-    int arr[4] = {2, 4, 1, 3};
-    insertionSort(arr, 4);
-	while (1);
+    insertionSort(4);
     return 0;
 }

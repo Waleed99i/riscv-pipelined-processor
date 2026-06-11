@@ -27,15 +27,7 @@ SECTIONS
     *(.rodata .rodata.*)  
     *(.srodata .srodata.*)
   } >RAM
-
-  . = ALIGN(4);
-
-  PROVIDE (__etext = .);
-  PROVIDE (_etext = .);
-  PROVIDE (etext = .);
-
-  _sidata = .;
-  .data : AT( _sidata )
+  .data 0x00000200 :
   {
     _sdata = .;
     *(.rdata) 

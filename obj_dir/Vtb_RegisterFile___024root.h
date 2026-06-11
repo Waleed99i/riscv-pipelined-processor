@@ -38,7 +38,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_RegisterFile___024root final {
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
     VlUnpacked<CData/*0:0*/, 4> __Vm_traceActivity;
     VlDelayScheduler __VdlySched;
-    VlTriggerScheduler __VtrigSched_hd8ad563f__0;
+    VlTriggerScheduler __VtrigSched_ha11d4032__0;
 
     // INTERNAL VARIABLES
     Vtb_RegisterFile__Syms* vlSymsp;

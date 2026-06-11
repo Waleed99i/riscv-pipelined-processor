@@ -11,7 +11,7 @@ Vtb_insertion_sort__Syms::Vtb_insertion_sort__Syms(VerilatedContext* contextp, c
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(429);
+    Verilated::stackCheck(430);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);

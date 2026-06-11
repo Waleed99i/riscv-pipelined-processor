@@ -3,13 +3,17 @@
 module tb_insertion_sort;
 		logic clk = 0;
 		logic rst = 1;
+		logic [31:0] val0;
+		logic [31:0] val1;
+		logic [31:0] val2;
+		logic [31:0] val3;
     cpu dut(
         .clk(clk),
         .rst(rst),
-        .val0(),
-        .val1(),
-        .val2(),
-        .val3()
+        .val0(val0),
+        .val1(val1),
+        .val2(val2),
+        .val3(val3)
     );
 		always #5 clk = ~clk;
     initial begin
@@ -37,9 +41,7 @@ module tb_insertion_sort;
         // Wait a few cycles to let PC leave 0
         repeat (5) @(posedge clk);
 
-        // main() returns to 0 when it finishes because `ra` is 0.
-        // We wait for PC to hit 0 again to know the program completed exactly one pass.
-        wait(dut.pc == 32'd0);
+        repeat(100000) @(posedge clk);
         
         // Wait a couple more cycles to ensure all pipeline stages complete
         repeat (2) @(posedge clk);
@@ -47,10 +49,10 @@ module tb_insertion_sort;
         $display("Execution finished.");
         
         // Validate the sorted array at dmem[0:3]
-        if (dut.dmem_inst.memory[0] !== 32'd1) $fatal(1, "arr[0] failed: %0d", dut.dmem_inst.memory[0]);
-        if (dut.dmem_inst.memory[1] !== 32'd2) $fatal(1, "arr[1] failed: %0d", dut.dmem_inst.memory[1]);
-        if (dut.dmem_inst.memory[2] !== 32'd3) $fatal(1, "arr[2] failed: %0d", dut.dmem_inst.memory[2]);
-        if (dut.dmem_inst.memory[3] !== 32'd4) $fatal(1, "arr[3] failed: %0d", dut.dmem_inst.memory[3]);
+        if (val0 !== 32'd1) $fatal(1, "arr[0] failed: %0d", val0);
+        if (val1 !== 32'd2) $fatal(1, "arr[1] failed: %0d", val1);
+        if (val2 !== 32'd3) $fatal(1, "arr[2] failed: %0d", val2);
+        if (val3 !== 32'd4) $fatal(1, "arr[3] failed: %0d", val3);
 
         $display("\033[0;32mtb_insertion_sort PASS\033[0m");
         $finish;

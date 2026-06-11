@@ -14,6 +14,7 @@ $(ELF): $(SRCS)
 
 $(BIN): $(ELF)
 	@riscv64-unknown-elf-objcopy -O binary --only-section=.vector_table --only-section=.data* --only-section=.text* --only-section=.rodata* $^ $@ && echo "BUILT $(notdir $@)"
+	@riscv64-unknown-elf-objcopy -O verilog --only-section=.vector_table --only-section=.data* --only-section=.text* --only-section=.rodata* $^ $(addsuffix .mem, $(basename $@)) && echo "BUILT $(notdir $(addsuffix .mem, $(basename $@)))"
 	@python maketxt.py $(BIN) > $(TXT) && echo "BUILT $(notdir $(TXT))"
 	@riscv64-unknown-elf-objdump -S -s $(ELF) > $(DUMP) && echo "BUILT $(notdir $(DUMP))"
 

@@ -70,6 +70,6 @@ VL_ATTR_COLD void Vtb_imem___024root__trace_full_0_sub_0(Vtb_imem___024root* vlS
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode);
     bufp->fullIData(oldp+0,(vlSelfRef.tb_imem__DOT__addr),32);
     bufp->fullIData(oldp+1,(vlSelfRef.tb_imem__DOT__dut__DOT__memory
-                            [(0x0000007fU & (vlSelfRef.tb_imem__DOT__addr 
+                            [(0x000000ffU & (vlSelfRef.tb_imem__DOT__addr 
                                              >> 2U))]),32);
 }

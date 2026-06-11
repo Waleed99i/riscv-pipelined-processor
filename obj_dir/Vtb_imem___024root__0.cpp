@@ -28,7 +28,7 @@ VlCoroutine Vtb_imem___024root___eval_initial__TOP__Vtiming__0(Vtb_imem___024roo
                                          "tests/tb_imem.sv", 
                                          16);
     if (VL_UNLIKELY(((0xdeadbeefU != vlSelfRef.tb_imem__DOT__dut__DOT__memory
-                      [(0x0000007fU & (vlSelfRef.tb_imem__DOT__addr 
+                      [(0x000000ffU & (vlSelfRef.tb_imem__DOT__addr 
                                        >> 2U))])))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_imem.sv:16: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_imem", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));
@@ -39,7 +39,7 @@ VlCoroutine Vtb_imem___024root___eval_initial__TOP__Vtiming__0(Vtb_imem___024roo
                                          "tests/tb_imem.sv", 
                                          17);
     if (VL_UNLIKELY(((0xcafebabeU != vlSelfRef.tb_imem__DOT__dut__DOT__memory
-                      [(0x0000007fU & (vlSelfRef.tb_imem__DOT__addr 
+                      [(0x000000ffU & (vlSelfRef.tb_imem__DOT__addr 
                                        >> 2U))])))) {
         VL_WRITEF_NX("[%0t] %%Fatal: tb_imem.sv:17: Assertion failed in %m\n",3, 'M',vlSymsp->name(),"tb_imem", 'T',-12
                      , '#',64,VL_TIME_UNITED_Q(1));

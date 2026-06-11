@@ -22,7 +22,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_imem___024root final {
     IData/*31:0*/ __VactIterCount;
     IData/*31:0*/ __VinactIterCount;
     IData/*31:0*/ __Vi;
-    VlUnpacked<IData/*31:0*/, 128> tb_imem__DOT__dut__DOT__memory;
+    VlUnpacked<IData/*31:0*/, 256> tb_imem__DOT__dut__DOT__memory;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggeredAcc;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;

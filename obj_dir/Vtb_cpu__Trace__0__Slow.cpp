@@ -122,7 +122,7 @@ VL_ATTR_COLD void Vtb_cpu___024root__trace_init_sub__TOP__0(Vtb_cpu___024root* v
     VL_TRACE_DECL_BUS(tracep,c+1,0,"val1",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 31,0);
     VL_TRACE_DECL_BUS(tracep,c+2,0,"val2",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 31,0);
     VL_TRACE_DECL_BUS(tracep,c+3,0,"val3",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 31,0);
-    VL_TRACE_DECL_BUS(tracep,c+97,0,"word_addr",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 6,0);
+    VL_TRACE_DECL_BUS(tracep,c+97,0,"word_addr",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 7,0);
     VL_TRACE_PUSH_PREFIX(tracep, "unnamedblk1", VerilatedTracePrefixType::SCOPE_MODULE, 0, 0);
     VL_TRACE_DECL_BUS(tracep,c+102,0,"current_word",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 31,0);
     VL_TRACE_DECL_BUS(tracep,c+103,0,"half_word",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 15,0);
@@ -243,20 +243,20 @@ VL_ATTR_COLD void Vtb_cpu___024root__trace_full_0_sub_0(Vtb_cpu___024root* vlSel
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode);
-    bufp->fullIData(oldp+0,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory[0U]),32);
-    bufp->fullIData(oldp+1,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory[1U]),32);
-    bufp->fullIData(oldp+2,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory[2U]),32);
-    bufp->fullIData(oldp+3,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory[3U]),32);
+    bufp->fullIData(oldp+0,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory[128U]),32);
+    bufp->fullIData(oldp+1,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory[129U]),32);
+    bufp->fullIData(oldp+2,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory[130U]),32);
+    bufp->fullIData(oldp+3,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__memory[131U]),32);
     bufp->fullIData(oldp+4,(vlSelfRef.tb_cpu__DOT__dut__DOT__imem_inst__DOT__memory
-                            [(0x0000007fU & (vlSelfRef.tb_cpu__DOT__dut__DOT__pc 
+                            [(0x000000ffU & (vlSelfRef.tb_cpu__DOT__dut__DOT__pc 
                                              >> 2U))]),32);
     bufp->fullCData(oldp+5,((0x0000001fU & (vlSelfRef.tb_cpu__DOT__dut__DOT__imem_inst__DOT__memory
-                                            [(0x0000007fU 
+                                            [(0x000000ffU 
                                               & (vlSelfRef.tb_cpu__DOT__dut__DOT__pc 
                                                  >> 2U))] 
                                             >> 7U))),5);
     bufp->fullCData(oldp+6,((vlSelfRef.tb_cpu__DOT__dut__DOT__imem_inst__DOT__memory
-                             [(0x0000007fU & (vlSelfRef.tb_cpu__DOT__dut__DOT__pc 
+                             [(0x000000ffU & (vlSelfRef.tb_cpu__DOT__dut__DOT__pc 
                                               >> 2U))] 
                              >> 0x00000019U)),7);
     bufp->fullIData(oldp+7,(vlSelfRef.tb_cpu__DOT__dut__DOT__rf_inst__DOT__rf[31]),32);
@@ -303,10 +303,10 @@ VL_ATTR_COLD void Vtb_cpu___024root__trace_full_0_sub_0(Vtb_cpu___024root* vlSel
     bufp->fullBit(oldp+48,(vlSelfRef.tb_cpu__DOT__dut__DOT__branch_1));
     bufp->fullBit(oldp+49,(vlSelfRef.tb_cpu__DOT__dut__DOT__jump_1));
     bufp->fullBit(oldp+50,(vlSelfRef.tb_cpu__DOT__dut__DOT__jump_reg_1));
-    bufp->fullCData(oldp+51,(vlSelfRef.__VdfgRegularize_hebeb780c_0_2),5);
-    bufp->fullCData(oldp+52,(vlSelfRef.__VdfgRegularize_hebeb780c_0_3),5);
-    bufp->fullCData(oldp+53,(vlSelfRef.__VdfgRegularize_hebeb780c_0_0),7);
-    bufp->fullCData(oldp+54,(vlSelfRef.__VdfgRegularize_hebeb780c_0_1),3);
+    bufp->fullCData(oldp+51,(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2),5);
+    bufp->fullCData(oldp+52,(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_3),5);
+    bufp->fullCData(oldp+53,(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_0),7);
+    bufp->fullCData(oldp+54,(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_1),3);
     bufp->fullIData(oldp+55,(vlSelfRef.tb_cpu__DOT__dut__DOT__mem_rdata_2),32);
     bufp->fullIData(oldp+56,(vlSelfRef.tb_cpu__DOT__dut__DOT__pc_next),32);
     bufp->fullIData(oldp+57,(vlSelfRef.tb_cpu__DOT__dut__DOT__pc),32);
@@ -337,7 +337,7 @@ VL_ATTR_COLD void Vtb_cpu___024root__trace_full_0_sub_0(Vtb_cpu___024root* vlSel
                                     >> 0x0000000cU))),3);
     bufp->fullCData(oldp+79,((vlSelfRef.tb_cpu__DOT__dut__DOT__inst_2 
                               >> 0x00000019U)),7);
-    bufp->fullCData(oldp+80,(vlSelfRef.tb_cpu__DOT__dut__DOT__alu_inst__DOT__alu_operation),4);
+    bufp->fullCData(oldp+80,(vlSelfRef.tb_cpu__DOT__dut__DOT__alu_ctrl_inst__DOT__alu_operation),4);
     bufp->fullIData(oldp+81,(vlSelfRef.tb_cpu__DOT__dut__DOT__alu_inst__DOT__result),32);
     bufp->fullBit(oldp+82,(vlSelfRef.tb_cpu__DOT__dut__DOT__branch_taken_2));
     bufp->fullIData(oldp+83,(vlSelfRef.tb_cpu__DOT__dut__DOT__forwarded_rs1_2),32);
@@ -346,7 +346,7 @@ VL_ATTR_COLD void Vtb_cpu___024root__trace_full_0_sub_0(Vtb_cpu___024root* vlSel
     bufp->fullIData(oldp+86,(vlSelfRef.tb_cpu__DOT__dut__DOT__alu_srcB_2),32);
     bufp->fullBit(oldp+87,(vlSelfRef.tb_cpu__DOT__dut__DOT__we_rf_3));
     bufp->fullCData(oldp+88,(vlSelfRef.tb_cpu__DOT__dut__DOT__waddr_rf_3),5);
-    bufp->fullIData(oldp+89,(vlSelfRef.tb_cpu__DOT__dut__DOT__rf_inst__DOT__wd_rf),32);
+    bufp->fullIData(oldp+89,(vlSelfRef.tb_cpu__DOT__dut__DOT__wd_rf_3),32);
     bufp->fullBit(oldp+90,(vlSelfRef.tb_cpu__DOT__dut__DOT__mem_to_reg_3));
     bufp->fullIData(oldp+91,(vlSelfRef.tb_cpu__DOT__dut__DOT__alu_out_3),32);
     bufp->fullIData(oldp+92,(vlSelfRef.tb_cpu__DOT__dut__DOT__mem_rdata_3),32);
@@ -356,16 +356,16 @@ VL_ATTR_COLD void Vtb_cpu___024root__trace_full_0_sub_0(Vtb_cpu___024root* vlSel
     bufp->fullBit(oldp+95,(VL_LTS_III(32, vlSelfRef.tb_cpu__DOT__dut__DOT__forwarded_rs1_2, vlSelfRef.tb_cpu__DOT__dut__DOT__forwarded_rs2_2)));
     bufp->fullBit(oldp+96,((vlSelfRef.tb_cpu__DOT__dut__DOT__forwarded_rs1_2 
                             < vlSelfRef.tb_cpu__DOT__dut__DOT__forwarded_rs2_2)));
-    bufp->fullCData(oldp+97,((0x0000007fU & (vlSelfRef.tb_cpu__DOT__dut__DOT__alu_inst__DOT__result 
-                                             >> 2U))),7);
+    bufp->fullCData(oldp+97,((0x000000ffU & (vlSelfRef.tb_cpu__DOT__dut__DOT__alu_inst__DOT__result 
+                                             >> 2U))),8);
     bufp->fullBit(oldp+98,(vlSelfRef.tb_cpu__DOT__clk));
     bufp->fullBit(oldp+99,(vlSelfRef.tb_cpu__DOT__rst));
     bufp->fullIData(oldp+100,((vlSelfRef.tb_cpu__DOT__dut__DOT__rf_inst__DOT__rf
-                               [vlSelfRef.__VdfgRegularize_hebeb780c_0_2] 
-                               & (- (IData)((0U != (IData)(vlSelfRef.__VdfgRegularize_hebeb780c_0_2)))))),32);
+                               [vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2] 
+                               & (- (IData)((0U != (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_2)))))),32);
     bufp->fullIData(oldp+101,((vlSelfRef.tb_cpu__DOT__dut__DOT__rf_inst__DOT__rf
-                               [vlSelfRef.__VdfgRegularize_hebeb780c_0_3] 
-                               & (- (IData)((0U != (IData)(vlSelfRef.__VdfgRegularize_hebeb780c_0_3)))))),32);
+                               [vlSelfRef.__VdfgRegularize_h6e95ff9d_0_3] 
+                               & (- (IData)((0U != (IData)(vlSelfRef.__VdfgRegularize_h6e95ff9d_0_3)))))),32);
     bufp->fullIData(oldp+102,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__unnamedblk1__DOT__current_word),32);
     bufp->fullSData(oldp+103,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__unnamedblk1__DOT__half_word),16);
     bufp->fullCData(oldp+104,(vlSelfRef.tb_cpu__DOT__dut__DOT__dmem_inst__DOT__unnamedblk1__DOT__byte_val),8);

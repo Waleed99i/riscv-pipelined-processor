@@ -33,7 +33,7 @@ VL_ATTR_COLD void Vtb_dmem___024root__trace_init_sub__TOP__0(Vtb_dmem___024root*
     VL_TRACE_DECL_BUS(tracep,c+10,0,"val1",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 31,0);
     VL_TRACE_DECL_BUS(tracep,c+11,0,"val2",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 31,0);
     VL_TRACE_DECL_BUS(tracep,c+12,0,"val3",-1, VerilatedTraceSigDirection::OUTPUT, VerilatedTraceSigKind::WIRE, VerilatedTraceSigType::LOGIC, 31,0);
-    VL_TRACE_DECL_BUS(tracep,c+6,0,"word_addr",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 6,0);
+    VL_TRACE_DECL_BUS(tracep,c+6,0,"word_addr",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 7,0);
     VL_TRACE_PUSH_PREFIX(tracep, "unnamedblk1", VerilatedTracePrefixType::SCOPE_MODULE, 0, 0);
     VL_TRACE_DECL_BUS(tracep,c+13,0,"current_word",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 31,0);
     VL_TRACE_DECL_BUS(tracep,c+14,0,"half_word",-1, VerilatedTraceSigDirection::NONE, VerilatedTraceSigKind::VAR, VerilatedTraceSigType::LOGIC, 15,0);
@@ -96,14 +96,14 @@ VL_ATTR_COLD void Vtb_dmem___024root__trace_full_0_sub_0(Vtb_dmem___024root* vlS
     bufp->fullCData(oldp+3,(vlSelfRef.tb_dmem__DOT__wmask),2);
     bufp->fullBit(oldp+4,(vlSelfRef.tb_dmem__DOT__load_unsigned));
     bufp->fullIData(oldp+5,(vlSelfRef.tb_dmem__DOT__mem_wdata),32);
-    bufp->fullCData(oldp+6,((0x0000007fU & (vlSelfRef.tb_dmem__DOT__addr 
-                                            >> 2U))),7);
+    bufp->fullCData(oldp+6,((0x000000ffU & (vlSelfRef.tb_dmem__DOT__addr 
+                                            >> 2U))),8);
     bufp->fullBit(oldp+7,(vlSelfRef.tb_dmem__DOT__clk));
     bufp->fullIData(oldp+8,(vlSelfRef.tb_dmem__DOT__mem_rdata),32);
-    bufp->fullIData(oldp+9,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[0U]),32);
-    bufp->fullIData(oldp+10,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[1U]),32);
-    bufp->fullIData(oldp+11,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[2U]),32);
-    bufp->fullIData(oldp+12,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[3U]),32);
+    bufp->fullIData(oldp+9,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[128U]),32);
+    bufp->fullIData(oldp+10,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[129U]),32);
+    bufp->fullIData(oldp+11,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[130U]),32);
+    bufp->fullIData(oldp+12,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[131U]),32);
     bufp->fullIData(oldp+13,(vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word),32);
     bufp->fullSData(oldp+14,(vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__half_word),16);
     bufp->fullCData(oldp+15,(vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__byte_val),8);

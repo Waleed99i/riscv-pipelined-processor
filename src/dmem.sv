@@ -20,10 +20,10 @@ module dmem (
         $readmemh("insertion_sort/build/main.txt", memory);
     end
 
-    assign val0 = memory[0];
-    assign val1 = memory[1];
-    assign val2 = memory[2];
-    assign val3 = memory[3];
+    assign val0 = memory[128];
+    assign val1 = memory[129];
+    assign val2 = memory[130];
+    assign val3 = memory[131];
 
     logic [7:0] word_addr;
     assign word_addr = addr[9:2];

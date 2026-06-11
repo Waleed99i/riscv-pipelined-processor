@@ -30,15 +30,15 @@ void Vtb_dmem___024root__trace_chg_0_sub_0(Vtb_dmem___024root* vlSelf, Verilated
         bufp->chgCData(oldp+3,(vlSelfRef.tb_dmem__DOT__wmask),2);
         bufp->chgBit(oldp+4,(vlSelfRef.tb_dmem__DOT__load_unsigned));
         bufp->chgIData(oldp+5,(vlSelfRef.tb_dmem__DOT__mem_wdata),32);
-        bufp->chgCData(oldp+6,((0x0000007fU & (vlSelfRef.tb_dmem__DOT__addr 
-                                               >> 2U))),7);
+        bufp->chgCData(oldp+6,((0x000000ffU & (vlSelfRef.tb_dmem__DOT__addr 
+                                               >> 2U))),8);
     }
     bufp->chgBit(oldp+7,(vlSelfRef.tb_dmem__DOT__clk));
     bufp->chgIData(oldp+8,(vlSelfRef.tb_dmem__DOT__mem_rdata),32);
-    bufp->chgIData(oldp+9,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[0U]),32);
-    bufp->chgIData(oldp+10,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[1U]),32);
-    bufp->chgIData(oldp+11,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[2U]),32);
-    bufp->chgIData(oldp+12,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[3U]),32);
+    bufp->chgIData(oldp+9,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[128U]),32);
+    bufp->chgIData(oldp+10,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[129U]),32);
+    bufp->chgIData(oldp+11,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[130U]),32);
+    bufp->chgIData(oldp+12,(vlSelfRef.tb_dmem__DOT__dut__DOT__memory[131U]),32);
     bufp->chgIData(oldp+13,(vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__current_word),32);
     bufp->chgSData(oldp+14,(vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__half_word),16);
     bufp->chgCData(oldp+15,(vlSelfRef.tb_dmem__DOT__dut__DOT__unnamedblk1__DOT__byte_val),8);
