@@ -1,0 +1,262 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor
+valu
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1780544749
+!i10b 1
+!s100 kY5Z=TFbSmfWdfO;RUZ1=0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I3N0T9FRQiIk>ekB4RgM@a0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1780544473
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/alu.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/alu.sv
+!i122 2
+L0 3 26
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1780544749.000000
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/opcode.vh|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/alu.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/alu.sv|
+!i113 1
+Z8 o-work work -sv
+Z9 tCvgOpt 0
+valu_controller
+R1
+R2
+!i10b 1
+!s100 nl90bh@SPC[>;BUR[JET33
+R3
+I6K9fh@3zk=fN<[Y7@Y0P?1
+R4
+S1
+R0
+R5
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/alu_controller.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/alu_controller.sv
+!i122 3
+L0 3 38
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/opcode.vh|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/alu_controller.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/alu_controller.sv|
+!i113 1
+R8
+R9
+vbranch_compare
+R1
+R2
+!i10b 1
+!s100 WSR<jd_;^<PbIgKmTlj251
+R3
+I86F=TPl@?4]UUbihz4lGB2
+R4
+S1
+R0
+R5
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/branch_compare.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/branch_compare.sv
+!i122 4
+L0 3 23
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/opcode.vh|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/branch_compare.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/branch_compare.sv|
+!i113 1
+R8
+R9
+vcpu
+R1
+Z10 !s110 1780544750
+!i10b 1
+!s100 1<OcMXgk472AWVQ4kU`oc1
+R3
+ILOAo3TmBPBdS^NiLHB8?B0
+R4
+S1
+R0
+R5
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/cpu.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/cpu.sv
+!i122 5
+L0 3 359
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/opcode.vh|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/cpu.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/cpu.sv|
+!i113 1
+R8
+R9
+vdmem
+R1
+R10
+!i10b 1
+!s100 o[iFdOLhILHGhaIK>hLG21
+R3
+Ie3L08O:ZH:_FUJ[El1@=a0
+R4
+S1
+R0
+R5
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/dmem.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/dmem.sv
+!i122 6
+L0 3 65
+R6
+r1
+!s85 0
+31
+Z11 !s108 1780544750.000000
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/opcode.vh|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/dmem.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/dmem.sv|
+!i113 1
+R8
+R9
+vimem
+R1
+R10
+!i10b 1
+!s100 WD;DHEWX6Jb37bQ<FO0fc3
+R3
+IZiz6@oWY865_4z9fRC]Y^1
+R4
+S1
+R0
+R5
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/imem.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/imem.sv
+!i122 7
+L0 3 7
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/opcode.vh|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/imem.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/imem.sv|
+!i113 1
+R8
+R9
+vimmgen
+R1
+R10
+!i10b 1
+!s100 k<OFK>Y`aobEYe_M7^N=a1
+R3
+IFH^kA?XIQN2chPlFD2E=H0
+R4
+S1
+R0
+R5
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/immgen.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/immgen.sv
+!i122 8
+L0 3 39
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/opcode.vh|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/immgen.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/immgen.sv|
+!i113 1
+R8
+R9
+vRegisterFile
+R1
+R10
+!i10b 1
+!s100 0A6;zen]X?UD1=10bI3FH3
+R3
+IRXdmHYh4>g0RUogQj=AlK1
+R4
+S1
+R0
+R5
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/RegisterFile.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/RegisterFile.sv
+!i122 9
+L0 3 20
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/opcode.vh|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/RegisterFile.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/src/RegisterFile.sv|
+!i113 1
+R8
+R9
+n@register@file
+vtb_with_hazards
+R1
+Z12 !s110 1780545060
+!i10b 1
+!s100 `z[W^Lb=ngD91Z:3@N:CC1
+R3
+I`YkT=0XDLSYAeijMeU0Zz2
+R4
+S1
+R0
+w1780545035
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/tests/tb_with_hazards.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/tests/tb_with_hazards.sv
+!i122 10
+L0 78 110
+R6
+r1
+!s85 0
+31
+Z13 !s108 1780545060.000000
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/tests/tb_with_hazards.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/tests/tb_with_hazards.sv|
+!i113 1
+R8
+R9
+vtb_without_hazards
+R1
+R12
+!i10b 1
+!s100 C8mdU846Y`=fGQad2R_oR3
+R3
+Izn146Mdo2P;97dKk3^fH93
+R4
+S1
+R0
+w1780545041
+8/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/tests/tb_without_hazards.sv
+F/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/tests/tb_without_hazards.sv
+!i122 11
+L0 78 88
+R6
+r1
+!s85 0
+31
+R13
+!s107 /home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/tests/tb_without_hazards.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/waleed/Documents/6th_semester/CA_LAB/riscv-pipelined-processor/tests/tb_without_hazards.sv|
+!i113 1
+R8
+R9

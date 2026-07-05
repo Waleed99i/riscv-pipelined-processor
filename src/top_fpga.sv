@@ -12,7 +12,7 @@ module top_fpga (
             clk_div <= 0;
             clk_cpu <= 0;
         end else begin
-            if (clk_div == 27'd50000 - 1) begin 
+            if (clk_div == 27'd500000 - 1) begin 
                 clk_div <= 0;
                 clk_cpu <= ~clk_cpu;
             end else begin
@@ -34,14 +34,14 @@ module top_fpga (
 
     // 3. Format values for unpacked array input in sim_dis
     logic [3:0] disp_nums [7:0];
-    assign disp_nums[0] = val3[3:0]; // Show lower nibble of the array
-    assign disp_nums[1] = val2[3:0];
-    assign disp_nums[2] = val1[3:0];
-    assign disp_nums[3] = val0[3:0];
-    assign disp_nums[4] = 4'd1;
-    assign disp_nums[5] = 4'd1;
-    assign disp_nums[6] = 4'd1;
-    assign disp_nums[7] = 4'd1;
+    assign disp_nums[0] = val0[3:0]; // Show lower nibble of the array
+    assign disp_nums[1] = val1[3:0];
+    assign disp_nums[2] = val2[3:0];
+    assign disp_nums[3] = val3[3:0];
+    assign disp_nums[4] = 4'd0;
+    assign disp_nums[5] = 4'd0;
+    assign disp_nums[6] = 4'd0;
+    assign disp_nums[7] = 4'd0;
 
     // 4. Instantiate Display Driver running on the fast 100 MHz clock
     sim_dis display_inst (

@@ -2,6 +2,12 @@
 
 This repository contains a simple 3-stage pipelined RISC-V processor design.
 
+## DataPath
+![datapath](docs/datapath.png)
+
+## Controller
+![controller](docs/controller.png)
+
 ## Project layout
 
 - `src/` — SystemVerilog RTL modules
