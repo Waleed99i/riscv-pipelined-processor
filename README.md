@@ -19,3 +19,8 @@ This repository contains a simple 3-stage pipelined RISC-V processor design.
 - `make test` — compile and execute all tests
 - `make tb_cpu` — run the full CPU integration test only
 - `make clean` — remove generated Verilator build files
+
+## Synthesis on FPGA
+Succesfully synthesized it on Nexys a7 FPGA. We run insertion sort.
+![fpga](docs/fpga.png)
+
